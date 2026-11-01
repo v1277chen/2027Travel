@@ -3,59 +3,66 @@
 
 <head>
     <!-- ============================================
-         頁面基本設定
-         - 設定字元編碼為 UTF-8
-         - 設定視窗縮放以適配行動裝置
-         - 載入 Google Fonts 字型
+         頁面基本與編碼設定
+         - 設定字元編碼為 UTF-8，確保繁體中文字元正常顯示
+         - 設定 viewport 適應行動裝置、平板與桌上型電腦寬度
     ============================================ -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- SEO 優化設定 -->
-    <title>2026 上海·成都·九寨溝·峨眉山·烏鎮 9日遊</title>
-    <meta name="description" content="精彩的9天旅程，從上海出發，探索成都美食、九寨溝仙境、峨眉山金頂、烏鎮水鄉。">
-    <meta name="keywords" content="旅遊, 上海, 成都, 九寨溝, 峨眉山, 烏鎮, 行程規劃">
+    <!-- SEO 搜尋引擎優化與網頁標題設定 -->
+    <title>2027 杭州·西溪·塘棲·周莊·蘇州 6日遊 | 蘇杭春季江南水鄉與古典園林深度行</title>
+    <meta name="description" content="2027年春季蘇杭5天半經典深度探索行程，走訪靈隱寺、西溪濕地、杭州西湖、宋城千古情、塘棲古鎮、水鄉周莊、拙政園、獅子林、虎丘與寒山寺。">
+    <meta name="keywords" content="蘇杭旅遊, 杭州, 蘇州, 西湖, 靈隱寺, 西溪濕地, 宋城千古情, 塘棲古鎮, 周莊古鎮, 拙政園, 獅子林, 虎丘, 蘇州博物館, 寒山寺, 2027旅遊規劃">
 
-    <!-- 載入 Google Fonts - Inter 字型 -->
+    <!-- 載入 Google Fonts - Noto Sans TC 思源黑體（繁體中文優化） -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
 
-    <!-- 載入自定義樣式表 -->
+    <!-- 載入外部主要樣式表（包含深藍漸層、玻璃擬態與響應式格線佈局） -->
     <link rel="stylesheet" href="index.css">
 </head>
 
 <body>
     <!-- ============================================
-         頁首區塊 (Hero Section)
-         - 顯示行程標題和日期範圍
-         - 包含背景漸層和動態效果
+         【模組一】頁首主視覺區塊 (Hero Section)
+         - 顯示行程主標題、副標題與出發日期區間
+         - 視覺卡片統計：天數(6天)、造訪城市(3城)、航班(2航段)
+         - 包含滑動向下探索導引箭頭指示器
     ============================================ -->
     <header class="hero" id="hero">
+        <!-- 半透明漸層覆蓋層，增強文字辨識度 -->
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <span class="hero-badge">2026 春季旅行</span>
-            <h1 class="hero-title">上海·成都·黃龍·九寨溝·樂山·峨眉山·烏鎮</h1>
-            <p class="hero-subtitle">9 天深度探索之旅</p>
+            <!-- 行程主題徽章標籤 -->
+            <span class="hero-badge">2027 春季旅行</span>
+            <!-- 行程主要標題 -->
+            <h1 class="hero-title">杭州·西溪·塘棲·周莊·蘇州</h1>
+            <!-- 行程副標題說明 -->
+            <p class="hero-subtitle">5 天半江南水鄉與古典園林深度探索之旅</p>
+            <!-- 日期範圍標籤 -->
             <div class="hero-dates">
-                <span class="date-badge">🗓️ 3月28日 - 4月5日</span>
+                <span class="date-badge">🗓️ 2027年 4月1日 (四) - 4月6日 (二)</span>
             </div>
+            <!-- 旅程統計數據小卡片（天數、城市數、航班數） -->
             <div class="hero-stats">
                 <div class="stat-item">
-                    <span class="stat-number">9</span>
+                    <span class="stat-number">6</span>
                     <span class="stat-label">天</span>
                 </div>
                 <div class="stat-item">
-                    <span class="stat-number">7</span>
+                    <span class="stat-number">3</span>
                     <span class="stat-label">城市</span>
                 </div>
                 <div class="stat-item">
-                    <span class="stat-number">4</span>
+                    <span class="stat-number">2</span>
                     <span class="stat-label">航班</span>
                 </div>
             </div>
-            <a href="#pre-departure" class="scroll-indicator">
+            <!-- 平滑向下滾動指示連結 -->
+            <a href="#pre-departure" class="scroll-indicator" title="點擊跳轉至行前準備">
                 <span>開始探索</span>
                 <div class="scroll-arrow"></div>
             </a>
@@ -63,9 +70,10 @@
     </header>
 
     <!-- ============================================
-         時間軸導航列 (Timeline Navigation)
-         - 固定於畫面側邊
-         - 點擊可跳轉至對應日期
+         【模組二】桌面側邊時間軸導航列 (Timeline Navigation)
+         - 固定定位於螢幕側邊，滾動超過 Hero 區塊後自動浮現
+         - 點擊可平滑滾動至對應的日程段落（D0 - D6）
+         - 依滾動位置自動高亮 active 項目
     ============================================ -->
     <nav class="timeline-nav" id="timelineNav">
         <div class="nav-title">行程導覽</div>
@@ -73,160 +81,156 @@
             <li><a href="#pre-departure" class="nav-item active" data-day="0"><span class="nav-dot"></span><span
                         class="nav-text">D0 準備</span></a></li>
             <li><a href="#day1" class="nav-item" data-day="1"><span class="nav-dot"></span><span class="nav-text">D1
-                        上海</span></a></li>
+                        啟程</span></a></li>
             <li><a href="#day2" class="nav-item" data-day="2"><span class="nav-dot"></span><span class="nav-text">D2
-                        成都</span></a></li>
+                        靈隱·西溪</span></a></li>
             <li><a href="#day3" class="nav-item" data-day="3"><span class="nav-dot"></span><span class="nav-text">D3
-                        黃龍</span></a></li>
+                        西湖·宋城</span></a></li>
             <li><a href="#day4" class="nav-item" data-day="4"><span class="nav-dot"></span><span class="nav-text">D4
-                        九寨溝</span></a></li>
+                        塘棲·周莊</span></a></li>
             <li><a href="#day5" class="nav-item" data-day="5"><span class="nav-dot"></span><span class="nav-text">D5
-                        成都</span></a></li>
+                        姑蘇·園林</span></a></li>
             <li><a href="#day6" class="nav-item" data-day="6"><span class="nav-dot"></span><span class="nav-text">D6
-                        樂山</span></a></li>
-            <li><a href="#day7" class="nav-item" data-day="7"><span class="nav-dot"></span><span class="nav-text">D7
-                        峨眉山</span></a></li>
-            <li><a href="#day8" class="nav-item" data-day="8"><span class="nav-dot"></span><span class="nav-text">D8
-                        烏鎮</span></a></li>
-            <li><a href="#day9" class="nav-item" data-day="9"><span class="nav-dot"></span><span class="nav-text">D9
-                        返程</span></a></li>
+                        蘇博·返程</span></a></li>
         </ul>
     </nav>
 
     <!-- ============================================
-         主要內容區塊 (Main Content)
-         - 包含所有 9 天的行程卡片
+         【模組三】主要內容容器 (Main Content)
+         包含 D0 出發前檢查清單及 Day 1 至 Day 6 每日行程詳情
     ============================================ -->
     <main class="main-content">
 
         <!-- ============================================
-             出發前注意事項區塊
-             - 可依日期折疊（超過 2026-03-28 自動折疊）
-             - 使用既有 day-section 折疊機制
+             D0：出發前注意事項與打包檢查清單 (Pre-departure Checklist)
+             - data-date 設為行程啟程首日 2027-04-01，支援超期自動折疊
+             - 包含護照證件、行動支付、CCC認證行動電源、常備藥品、春季江南氣候叮嚀
         ============================================ -->
-        <section class="day-section checklist-section" id="pre-departure" data-date="2026-03-28">
+        <section class="day-section checklist-section" id="pre-departure" data-date="2027-04-01">
+            <!-- 區塊折疊觸發標頭 -->
             <div class="day-header collapsible-trigger">
                 <div class="day-number" style="font-size: 1.8rem;">📋</div>
                 <div class="day-info">
-                    <span class="day-date">出發日：3月28日 (六) 前必讀</span>
-                    <h2 class="day-title">出發前注意事項</h2>
-                    <p class="day-highlight">護照證件・貨幣通訊・行動電源・行李打包・旅遊保險</p>
+                    <span class="day-date">出發日：2027年4月1日 (四) 前必讀</span>
+                    <h2 class="day-title">出發前注意事項與行前準備</h2>
+                    <p class="day-highlight">台胞證件・行動支付實名認證・CCC認證行動電源・江南春季衣著・常備藥品</p>
                 </div>
                 <div class="collapse-icon">▼</div>
             </div>
 
-            <!-- 出發前注意事項圖（不隨行程折疊） -->
+            <!-- 行前宣導資訊大圖（保留於折疊外層直觀展示） -->
             <div class="card fade-in" style="padding: 0; overflow: hidden;">
-                <img src="Photo/Itinerary/中國大陸旅遊注意事項.png" alt="出發前注意事項圖"
+                <img src="Photo/Itinerary/中國大陸旅遊注意事項.png" alt="中國大陸旅遊行前注意事項說明圖"
                     style="width: 100%; height: auto; border-radius: 12px; display: block;">
             </div>
 
+            <!-- 可折疊內容區塊 -->
             <div class="day-content">
 
-                <!-- 護照與證件 -->
+                <!-- 檢查項目 1：護照與證件 -->
                 <div class="card card-checklist fade-in">
                     <div class="card-icon">✈️</div>
                     <div class="card-body">
-                        <h3 class="card-title">護照與證件</h3>
+                        <h3 class="card-title">護照與必備證件</h3>
                         <div class="checklist-items">
                             <div class="checklist-item">
                                 <span class="checklist-bullet">✅</span>
-                                <div><strong>護照效期：</strong>確認護照有效期限至少 6 個月以上（自入境日起算）</div>
+                                <div><strong>護照有效效期：</strong>確認中華民國護照有效期限至少 6 個月以上（自 2027 年 4 月入境日起算）。</div>
                             </div>
                             <div class="checklist-item">
                                 <span class="checklist-bullet">✅</span>
-                                <div><strong>台胞證（卡式）：</strong>確認已辦妥且在有效期限內，入境中國大陸必備</div>
+                                <div><strong>卡式台胞證（臺灣居民來往大陸通行證）：</strong>確認已辦妥且在有效期限內，入境中國大陸海關、搭乘高鐵與參觀景點（如博物館實名制）必備隨身攜帶。
+                                </div>
                             </div>
                             <div class="checklist-item">
                                 <span class="checklist-bullet">✅</span>
-                                <div><strong>證件影本/電子檔：</strong>備份護照、台胞證、機票電子檔至手機與雲端，以防遺失</div>
+                                <div><strong>重要證件電子備份：</strong>將護照個人資料頁、台胞證、機票電子憑證拍照存於手機相簿並備份至雲端硬碟，防範意外遺失。</div>
                             </div>
                             <div class="checklist-item">
                                 <span class="checklist-bullet">✅</span>
-                                <div><strong>2吋照片：</strong>備2張備用大頭照，以備不時之需</div>
+                                <div><strong>備用證件照：</strong>建議隨身攜帶 2 張 2 吋白底彩色大頭照以備不時之需。</div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- 貨幣與支付 -->
+                <!-- 檢查項目 2：貨幣與行動支付 -->
                 <div class="card card-checklist fade-in">
                     <div class="card-icon">💰</div>
                     <div class="card-body">
-                        <h3 class="card-title">貨幣與支付</h3>
+                        <h3 class="card-title">貨幣與行動支付準備</h3>
                         <div class="checklist-items">
                             <div class="checklist-item">
                                 <span class="checklist-bullet">✅</span>
-                                <div><strong>人民幣兌換：</strong>出發前兌換適量人民幣（建議至少準備1,000～2,000元人民幣備用）。</div>
+                                <div><strong>人民幣現鈔備用：</strong>出發前兌換約 1,000 ～ 2,000 元人民幣現金零錢，供部分傳統老鋪或緊急情況應急。</div>
                             </div>
                             <div class="checklist-item">
                                 <span class="checklist-bullet">✅</span>
-                                <div><strong>行動支付：</strong>提前設定好微信支付或支付寶，最好先預存一些人民幣，也可以綁定信用卡或銀行卡，中國境內大多數消費以行動支付為主</div>
+                                <div><strong>微信支付 (WeChat Pay) 與支付寶 (Alipay)：</strong>出發前務必完成實名認證，並綁定台灣發行之國際信用卡（VISA /
+                                    MasterCard）或直接使用零錢餘額，大陸景區、計程車、餐廳幾乎全面支援掃碼支付。</div>
                             </div>
                             <div class="checklist-item">
                                 <span class="checklist-bullet">✅</span>
-                                <div><strong>信用卡：</strong>可攜帶 VISA / MasterCard 國際信用卡備用，部分大型商場和酒店可使用</div>
+                                <div><strong>實體信用卡：</strong>攜帶 1～2 張已開啟海外交易與海外簡訊認證之國際信用卡，部分星級飯店入住押金可刷卡。</div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- 通訊與網路 -->
+                <!-- 檢查項目 3：通訊與網路 -->
                 <div class="card card-checklist fade-in">
                     <div class="card-icon">📱</div>
                     <div class="card-body">
-                        <h3 class="card-title">通訊與網路</h3>
+                        <h3 class="card-title">通訊網路與必載 APP</h3>
                         <div class="checklist-items">
                             <div class="checklist-item">
                                 <span class="checklist-bullet">✅</span>
-                                <div><strong>中國 SIM 卡 / eSIM：</strong>提前購買中國上網卡或eSIM（建議選擇有翻牆功能的方案，可正常使用
-                                    LINE、Google、Facebook）</div>
+                                <div><strong>免翻牆上網卡 / 中港澳 eSIM：</strong>建議提前選購免翻牆國際漫遊上網卡或 eSIM 方案，能在大陸境內順暢使用
+                                    LINE、Google、Facebook 等常見社群軟體。</div>
                             </div>
                             <div class="checklist-item">
                                 <span class="checklist-bullet">✅</span>
-                                <div><strong>VPN 準備：</strong>若使用中國當地 SIM 卡上網，需事先安裝 VPN 軟體，否則無法使用台灣常用 APP</div>
+                                <div><strong>導航必備 APP：</strong>Google Maps
+                                    在中國境內定位有偏移且圖資不完整，強烈建議出發前於手機下載安裝<strong>「高德地圖」</strong>或<strong>「百度地圖」</strong>APP。
+                                </div>
                             </div>
                             <div class="checklist-item">
                                 <span class="checklist-bullet">✅</span>
-                                <div><strong>離線地圖：</strong>建議下載高德地圖或百度地圖 APP，Google Maps 在中國境內無法正常使用</div>
+                                <div><strong>美食與景點生活 APP：</strong>可安裝<strong>「大眾點評」</strong>APP 查詢景點營業時間、排隊狀況與在地人激推美饌。
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- ⚡ 行動電源攜帶規定（重點區塊） -->
+                <!-- 檢查項目 4：⚡ 行動電源 CCC 認證規定（重點防踩雷規範） -->
                 <div class="card card-checklist card-powerbank fade-in">
                     <div class="card-icon">🔋</div>
                     <div class="card-body">
-                        <h3 class="card-title">行動電源攜帶規定（中國境內航段）</h3>
+                        <h3 class="card-title">行動電源攜帶法規（中國境內安檢重點）</h3>
                         <div class="powerbank-alert">
-                            <p>⚠️ <strong>重要公告：</strong>自 2025 年 6 月 28 日起，中國民航局（CAAC）規定搭乘中國境內航班，行動電源<strong>必須具有中國 CCC
-                                    認證標誌</strong>，否則將禁止攜帶登機！</p>
+                            <p>⚠️ <strong>重大警示：</strong>搭乘往返中國航班及境內安檢，行動電源<strong>本體必須清晰印有 CCC
+                                    認證標誌（中國強制性產品認證）</strong>或符合各項民航規格標示，無標示、標示模糊或未經核可者將在安檢時直接被沒收！</p>
                         </div>
 
-                        <!-- CCC 認證標誌說明 -->
+                        <!-- CCC 認證標誌向量圖解說 -->
                         <div class="ccc-info-box">
                             <div class="ccc-badge-container">
                                 <div class="ccc-badge">
-                                    <!-- 中國強制性產品認證 (CCC) 標誌 - 來源：Wikimedia Commons (公有領域) -->
                                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                                         version="1.1" width="80" height="67" viewBox="0 0 240 200">
-                                        <!-- 外橢圓框 -->
                                         <ellipse cx="120" cy="100" rx="115" ry="90"
                                             style="stroke:#000; stroke-width:7px; fill:#fff;" />
-                                        <!-- 第一個 C -->
                                         <path id="ccc-c" d="M 100,56 a 41, 43.5, 0, 0, 0, 1, 87"
                                             style="stroke:#000; stroke-width:16px; fill:none;" />
-                                        <!-- 第二個 C (向右偏移 38) -->
                                         <use xlink:href="#ccc-c" x="38" />
-                                        <!-- 第三個 C (向右偏移 76) -->
                                         <use xlink:href="#ccc-c" x="76" />
                                     </svg>
                                 </div>
                                 <div class="ccc-label">
                                     <strong>CCC 認證標誌</strong>
-                                    <p>（中國強制性產品認證）</p>
-                                    <p>請確認行動電源本體上有此標誌</p>
+                                    <p>（China Compulsory Certification）</p>
+                                    <p>請檢查行動電源外殼是否有清晰完整的標籤</p>
                                 </div>
                             </div>
                         </div>
@@ -234,155 +238,79 @@
                         <div class="checklist-items">
                             <div class="checklist-item">
                                 <span class="checklist-bullet">🔴</span>
-                                <div><strong>必須隨身攜帶：</strong>行動電源<strong>嚴禁託運</strong>，必須放在手提行李中帶上飛機</div>
+                                <div><strong>嚴禁託運：</strong>行動電源<strong>必須隨身手提攜帶</strong>登機，千萬不可放入托運行李。</div>
                             </div>
                             <div class="checklist-item">
                                 <span class="checklist-bullet">🔴</span>
-                                <div><strong>CCC 認證：</strong>行動電源本體上必須有清晰可見的 <strong>CCC
-                                        認證標誌</strong>（如上圖），標誌褪色、模糊不清者亦禁止攜帶</div>
-                            </div>
-                            <div class="checklist-item">
-                                <span class="checklist-bullet">🔴</span>
-                                <div><strong>容量限制：</strong>
+                                <div><strong>額定能量限制：</strong>
                                     <ul class="powerbank-rules">
-                                        <li>🟢 <strong>100Wh 以下</strong>（約 27,000mAh / 3.7V）→ 可攜帶，限帶 2 個</li>
-                                        <li>🟡 <strong>100Wh ～ 160Wh</strong> → 需經航空公司同意</li>
-                                        <li>🔴 <strong>超過 160Wh</strong> → 全面禁止攜帶</li>
+                                        <li>🟢 <strong>100Wh 以下</strong>（約 20,000mAh~27,000mAh / 3.7V）：可正常隨身攜帶，每人上限 2 顆。
+                                        </li>
+                                        <li>🟡 <strong>100Wh ～ 160Wh</strong>：需經航空公司專案批准後方可攜帶。</li>
+                                        <li>🔴 <strong>超過 160Wh</strong> 或未標註額定容量之行動電源：全面禁止攜帶上機。</li>
                                     </ul>
                                 </div>
                             </div>
                             <div class="checklist-item">
                                 <span class="checklist-bullet">🔴</span>
-                                <div><strong>瓦時計算：</strong>Wh = (mAh ÷ 1000) × V。例如：20,000mAh × 3.7V = 74Wh ✅</div>
-                            </div>
-                            <div class="checklist-item">
-                                <span class="checklist-bullet">🔴</span>
-                                <div><strong>飛行中禁充電：</strong>航程中禁止使用行動電源為任何設備充電</div>
-                            </div>
-                            <div class="checklist-item">
-                                <span class="checklist-bullet">🔴</span>
-                                <div><strong>不合格產品：</strong>外殼膨脹、損壞、變形，或未標示容量的行動電源，將被安檢沒收</div>
+                                <div><strong>航程禁充：</strong>依據民航法規，飛機飛行滑行全程嚴禁使用行動電源給手機等任何電子設備充電。</div>
                             </div>
                         </div>
 
                         <div class="powerbank-tip">
-                            💡 <strong>建議：</strong>出發前先檢查行動電源上是否有 CCC
-                            標誌，並將行動電源單獨放進透明密封袋或用絕緣膠帶貼住充電孔，避免金屬物品碰撞造成短路。也可以直接在中國境內購買一個有 CCC 認證的行動電源備用。
+                            💡 <strong>建議：</strong>建議攜帶標示清晰的品牌行動電源（如標示清楚的知名大廠），並置於隨身小包，以利安檢時取出查驗。
                         </div>
                     </div>
                 </div>
 
-                <!-- 常備藥品 -->
+                <!-- 檢查項目 5：常備藥品與健康守護 -->
                 <div class="card card-checklist fade-in">
                     <div class="card-icon">💊</div>
                     <div class="card-body">
-                        <h3 class="card-title">常備藥品</h3>
+                        <h3 class="card-title">常備個人藥品</h3>
                         <div class="checklist-items">
                             <div class="checklist-item">
                                 <span class="checklist-bullet">✅</span>
-                                <div><strong>高反預防藥：</strong>紅景天 / 丹木斯 / 海拔適（需上山前一天開始服用）</div>
+                                <div><strong>腸胃藥與止瀉藥：</strong>蘇杭菜系偏甜且生鮮河鮮多，隨身準備胃乳、止瀉藥與益生菌，以防水土不服。</div>
                             </div>
                             <div class="checklist-item">
                                 <span class="checklist-bullet">✅</span>
-                                <div><strong>腸胃藥：</strong>適應不同飲食習慣，建議攜帶止瀉藥、胃藥</div>
+                                <div><strong>綜合感冒藥與止痛退燒藥：</strong>早晚溫差或春雨可能著涼，備妥普拿疼與止痛抗發炎藥物。</div>
                             </div>
                             <div class="checklist-item">
                                 <span class="checklist-bullet">✅</span>
-                                <div><strong>感冒藥與退燒藥：</strong>高海拔地區日夜溫差大，容易著涼</div>
+                                <div><strong>防蚊液與外傷藥膏：</strong>西溪濕地及水鄉園林綠植水系豐富，春季建議攜帶防蚊液與 OK 繃。</div>
                             </div>
                             <div class="checklist-item">
                                 <span class="checklist-bullet">✅</span>
-                                <div><strong>OK繃與消炎藥：</strong>戶外行程可能需要</div>
-                            </div>
-                            <div class="checklist-item">
-                                <span class="checklist-bullet">✅</span>
-                                <div><strong>個人處方藥：</strong>攜帶足夠天數的處方藥，並備好處方箋或英文藥品證明</div>
+                                <div><strong>個人慢性病藥物：</strong>務必備足整個旅程天數＋額外 2 天份量的個人常規處方藥品。</div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- 行李打包建議 -->
+                <!-- 檢查項目 6：江南 4 月天氣與衣著建議 -->
                 <div class="card card-checklist fade-in">
-                    <div class="card-icon">🧳</div>
+                    <div class="card-icon">🧥</div>
                     <div class="card-body">
-                        <h3 class="card-title">行李打包建議</h3>
+                        <h3 class="card-title">4月江南春季氣候與衣著裝備</h3>
                         <div class="checklist-items">
                             <div class="checklist-item">
-                                <span class="checklist-bullet">✅</span>
-                                <div><strong>保暖衣物：</strong>九寨溝/黃龍地區海拔高、溫差大（5～15°C），建議洋蔥式穿搭，攜帶羽絨外套或衝鋒衣</div>
+                                <span class="checklist-bullet">🌦️</span>
+                                <div><strong>氣溫概況：</strong>4月初杭州與蘇州平均氣溫約為 <strong>12°C ～ 22°C</strong>，白天晴朗舒適，早晚微涼。
+                                </div>
                             </div>
                             <div class="checklist-item">
-                                <span class="checklist-bullet">✅</span>
-                                <div><strong>防曬用品：</strong>高海拔地區紫外線強烈，備好防曬霜（SPF50+）、太陽眼鏡、帽子</div>
+                                <span class="checklist-bullet">🧥</span>
+                                <div><strong>洋蔥式穿搭法：</strong>內層薄長袖或透氣短T，外層搭配防風輕便外套或針織開衫，便於隨氣溫增減。</div>
                             </div>
                             <div class="checklist-item">
-                                <span class="checklist-bullet">✅</span>
-                                <div><strong>雨具：</strong>摺疊雨傘或輕便雨衣，九寨溝地區常有陣雨</div>
+                                <span class="checklist-bullet">👟</span>
+                                <div><strong>防滑好走健步鞋：</strong>園林（如拙政園、獅子林假山）與古鎮水鄉多石板路、石階與橋樑，建議穿著防滑底健步球鞋。</div>
                             </div>
                             <div class="checklist-item">
-                                <span class="checklist-bullet">✅</span>
-                                <div><strong>舒適好走的鞋：</strong>行程多步行與爬山，建議穿防滑防水的健行鞋或運動鞋</div>
-                            </div>
-                            <div class="checklist-item">
-                                <span class="checklist-bullet">✅</span>
-                                <div><strong>轉接插頭：</strong>中國大陸使用雙腳扁型插座（與台灣部分相容，三孔則需轉接頭）</div>
-                            </div>
-                            <div class="checklist-item">
-                                <span class="checklist-bullet">✅</span>
-                                <div><strong>保溫瓶：</strong>九寨溝日間遊覽時間長，建議攜帶保溫瓶裝熱水</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 天氣與穿搭 -->
-                <div class="card card-checklist fade-in">
-                    <div class="card-icon">🌡️</div>
-                    <div class="card-body">
-                        <h3 class="card-title">天氣與穿搭建議</h3>
-                        <div class="checklist-items">
-                            <div class="checklist-item">
-                                <span class="checklist-bullet">🔹</span>
-                                <div><strong>上海（3/28）：</strong>約 10～25°C，春裝搭配薄外套即可</div>
-                            </div>
-                            <div class="checklist-item">
-                                <span class="checklist-bullet">🔹</span>
-                                <div><strong>成都（3/29、4/1）：</strong>約 12～22°C，春裝外加輕薄外套</div>
-                            </div>
-                            <div class="checklist-item">
-                                <span class="checklist-bullet">🔹</span>
-                                <div><strong>黃龍/九寨溝（3/30～3/31）：</strong>約 5～15°C，需厚外套或羽絨衣，做好保暖</div>
-                            </div>
-                            <div class="checklist-item">
-                                <span class="checklist-bullet">🔹</span>
-                                <div><strong>峨眉山金頂（4/2～4/3）：</strong>約 5～10°C，山頂極寒，必備厚外套或羽絨衣與手套</div>
-                            </div>
-                            <div class="checklist-item">
-                                <span class="checklist-bullet">🔹</span>
-                                <div><strong>烏鎮（4/4）：</strong>約 10～25°C，與上海氣候相近，春裝即可</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 旅遊保險 -->
-                <div class="card card-checklist fade-in">
-                    <div class="card-icon">🛡️</div>
-                    <div class="card-body">
-                        <h3 class="card-title">旅遊保險</h3>
-                        <div class="checklist-items">
-                            <div class="checklist-item">
-                                <span class="checklist-bullet">✅</span>
-                                <div><strong>旅遊平安險：</strong>建議投保含海外醫療、意外險、緊急救援的旅平險</div>
-                            </div>
-                            <div class="checklist-item">
-                                <span class="checklist-bullet">✅</span>
-                                <div><strong>不便險：</strong>建議加保行李延誤、航班延誤等不便險</div>
-                            </div>
-                            <div class="checklist-item">
-                                <span class="checklist-bullet">✅</span>
-                                <div><strong>保單副本：</strong>將保單截圖或電子檔存在手機備用</div>
+                                <span class="checklist-bullet">☂️</span>
+                                <div><strong>折疊輕便雨具：</strong>「江南好，風景舊曾諳」，春雨如絲，隨身攜帶輕量折疊傘或雨衣，拍照防雨兩相宜。</div>
                             </div>
                         </div>
                     </div>
@@ -391,2084 +319,862 @@
             </div>
         </section>
 
-        <!-- ========== Day 1: 3月28日 高雄 → 上海 ========== -->
-        <section class="day-section" id="day1" data-date="2026-03-28">
+        <!-- ============================================
+             Day 1: 2027年 4月1日 (四) 高雄 ✈➔ 上海 ➔ 杭州
+             - 13:00 包車出發前往高雄機場
+             - 14:30 機場集合辦理通關手續
+             - 16:50 高雄(KHH) 直飛 上海(PVG)浦東機場 (19:00抵達)
+             - 19:00 專屬旅遊中巴接機專車前往杭州 (車程約3小時)
+             - 宿：全季酒店 (杭州吳山廣場店)
+        ============================================ -->
+        <section class="day-section" id="day1" data-date="2027-04-01">
             <div class="day-header collapsible-trigger">
                 <div class="day-number">01</div>
                 <div class="day-info">
-                    <span class="day-date">3月28日 (六)</span>
-                    <h2 class="day-title">高雄 → 上海浦東</h2>
-                    <p class="day-highlight">上海南京步行街・四行倉庫・外灘夜景・萬國建築群</p>
+                    <span class="day-date">4月1日 (四)</span>
+                    <h2 class="day-title">高雄 ✈➔ 上海浦東 ➔ 杭州</h2>
+                    <p class="day-highlight">包車出發・直飛上海浦東・專屬旅遊中巴接機・夜抵杭州西湖商圈全季酒店</p>
                 </div>
                 <div class="collapse-icon">▼</div>
             </div>
 
-            <!-- 今日攻略圖（不隨行程折疊） -->
-            <div class="card fade-in" style="padding: 0; overflow: hidden;">
-                <img src="Photo/Itinerary/2026-03-28-1.png" alt="3月28日 行程攻略圖"
-                    style="width: 100%; height: auto; border-radius: 12px; display: block;">
-            </div>
-
-            <a href="https://www.nmc.cn/publish/forecast/ASH/shanghai.html" target="_blank" class="card-link">
-                ⛅ 上海天氣預報
+            <!-- 天氣預報即時連結 -->
+            <a href="https://www.nmc.cn/publish/forecast/AZJ/hangzhou.html" target="_blank" rel="noopener noreferrer"
+                class="card-link" style="margin-bottom: 1rem; display: inline-flex;">
+                ⛅ 杭州即時天氣預報（中國天氣網）
             </a>
 
             <div class="day-content">
-                <!-- 今日攻略圖 -->
-                <div class="card fade-in" style="padding: 0; overflow: hidden;">
-                    <img src="Photo/Itinerary/2026-03-28-2.png" alt="3月28日 行程攻略圖"
-                        style="width: 100%; height: auto; border-radius: 12px; display: block;">
-                </div>
 
-                <!-- 交通卡片：集合出發 -->
+                <!-- 交通卡片：專車前往小港機場 -->
                 <div class="card card-transport fade-in">
                     <div class="card-icon">🚐</div>
                     <div class="card-body">
-                        <span class="card-time">09:00</span>
-                        <h3 class="card-title">包車前往機場</h3>
-                        <p class="card-desc">車號：RDV-1558 蘇冠成 0955306227 （1700元）</p>
-                        <p class="card-desc">車號：RFK-9186 陳雨銓 0931938853 （1800元）</p>
-                        <a href="https://www.rome2rio.com/zh/map/台湾台南市永康区南台街南臺科技大學/高雄国际机场-KHH" target="_blank"
-                            class="card-link">
-                            📍 包車前往機場
-                        </a>
+                        <span class="card-time">13:00</span>
+                        <h3 class="card-title">包車出發前往高雄國際機場</h3>
+                        <p class="card-desc">依約定時間地點準時上車，專車接送前往高雄小港國際機場（KHH）。請務必於上車前再次確認護照與台胞證隨身攜帶。</p>
                     </div>
                 </div>
 
-                <!-- 交通卡片：機場集合 -->
+                <!-- 流程卡片：機場集合 -->
                 <div class="card card-transport fade-in">
-                    <div class="card-icon">✈️</div>
+                    <div class="card-icon">🛄</div>
                     <div class="card-body">
-                        <span class="card-time">10:30</span>
-                        <h3 class="card-title">高雄機場集合</h3>
-                        <p class="card-desc">準備通關手續</p>
+                        <span class="card-time">14:30</span>
+                        <h3 class="card-title">高雄小港機場集合</h3>
+                        <p class="card-desc">國際線出境大廳集合，領取登機證、辦理大型行李託運，隨後通過安全檢查與海關通關手續，前往登機門候機。</p>
                     </div>
                 </div>
 
                 <!-- 航班示意圖卡片 -->
                 <div class="card fade-in" style="padding: 0; overflow: hidden;">
-                    <img src="Photo/Itinerary/高雄飛上海.png" alt="3月28日 高雄飛上海"
-                        style="width: 100%; height: auto; border-radius: 12px; display: block;">
+                    <img src="Photo/Itinerary/高雄飛上海.png" alt="高雄直飛上海航線示意圖"
+                        style="width: 100%; height: auto; border-radius: 12px; display: block;" loading="lazy">
                 </div>
 
-                <!-- 航班卡片 -->
+                <!-- 航班卡片：直飛上海浦東 -->
                 <div class="card card-flight fade-in">
                     <div class="flight-header">
-                        <span class="airline">吉祥航空 HO1312 (空中巴士A321)</span>
+                        <span class="airline">直飛國際航班 ✈ 高雄 ➔ 上海浦東</span>
                     </div>
                     <div class="flight-route">
                         <div class="flight-city">
-                            <span class="flight-time">12:45</span>
+                            <span class="flight-time">16:50</span>
                             <span class="flight-name">高雄 KHH</span>
                         </div>
                         <div class="flight-line">
                             <span class="flight-icon">✈</span>
                         </div>
                         <div class="flight-city">
-                            <span class="flight-time">14:55</span>
-                            <span class="flight-name">上海浦東 T2</span>
+                            <span class="flight-time">19:00</span>
+                            <span class="flight-name">上海浦東 PVG</span>
                         </div>
                     </div>
 
-                    <!-- 吉祥航空行李限制 -->
+                    <!-- 行李限制規定提醒 -->
                     <div class="flight-baggage">
                         <div class="baggage-title">
-                            <span>🧳</span> 行李限制規定
+                            <span>🧳</span> 航空託運與手提行李規定
                         </div>
                         <div class="baggage-list">
                             <div class="baggage-item">
                                 <span class="baggage-icon">👜</span>
                                 <div class="baggage-text">
-                                    <strong>手提行李：</strong>10公斤/件，三邊之和不超過115cm
+                                    <strong>手提隨身行李：</strong>每人限 1 件（約 7～10 公斤），行動電源與貴重物品務必隨身放置。
                                 </div>
                             </div>
                             <div class="baggage-item">
                                 <span class="baggage-icon">🧳</span>
                                 <div class="baggage-text">
-                                    <strong>托運行李：</strong>23公斤/件，三邊之和不超過158cm
+                                    <strong>免費託運行李：</strong>每人 1 件（上限 23 公斤），三邊總和不得超過 158 公分。
                                 </div>
                             </div>
-                            <div class="baggage-note">
-                                ⚠️ 超重或超件費用：人民幣 1,000 元/件<br>
-                                ※ 僅限 CHECK IN 櫃台 <strong>現金付款</strong> (依當天匯率)，無法刷卡
-                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- 交通選項卡片 -->
-                <div class="card card-info fade-in expandable" data-expanded="false">
-                    <div class="card-header-expandable">
-                        <div class="card-icon">🚇</div>
-                        <div class="card-body">
-                            <h3 class="card-title">上海浦東機場至市區交通方案</h3>
-                            <p class="card-desc" style="color: var(--accent-purple);">📍 點擊查看詳細方案比較</p>
-                        </div>
-                        <div class="expand-icon">▼</div>
-                    </div>
-                    <div class="card-expand-content">
-                        <div class="transport-option">
-                            <h4>🔷 方案一：地鐵2號線</h4>
-                            <p>搭乘地鐵2號線直達南京東路站，步行至天津路</p>
-                            <div class="option-tags">
-                                <span class="tag tag-price">💰 約 7-9 元</span>
-                                <span class="tag tag-time">⏱️ 約 1小時10分鐘</span>
-                                <span class="tag tag-recommend">最省錢方案</span>
-                            </div>
-                        </div>
-                        <div class="transport-option">
-                            <h4>🔷 方案二：磁浮列車 + 地鐵 (較推薦)</h4>
-                            <p>搭磁浮列車到龍陽路站，再轉乘地鐵2號線到南京東路</p>
-                            <div class="option-tags">
-                                <span class="tag tag-price">💰 普通票 50 元 </span>
-                                <span class="tag tag-time">⏱️ 磁浮 8 分鐘 (最高時速430km/h)</span>
-                                <span class="tag tag-special">🚄 最快方案</span>
-                            </div>
-                            <p class="tip">💡 磁浮地鐵一票通：地鐵一日票+磁浮單程票 = 55元/張</p>
-                        </div>
-                        <div class="transport-option">
-                            <a href="https://www.rome2rio.com/zh/map/中国上海市浦东新区上海浦东国际机场T1航站楼/南京东路站" target="_blank"
-                                class="card-link">
-                                📍 上海浦東T2至南京東路站
-                            </a>
-                        </div>
+                <!-- 交通卡片：抵達上海接機前往杭州 -->
+                <div class="card card-transport fade-in">
+                    <div class="card-icon">🚌</div>
+                    <div class="card-body">
+                        <span class="card-time">19:00</span>
+                        <h3 class="card-title">抵達上海浦東機場・專車接機前往杭州</h3>
+                        <p class="card-desc">班機順利降落上海浦東國際機場（PVG），通關入境並提領托運行李後，出航廈會合專屬旅遊中巴車，啟程專車直奔「人間天堂」杭州市，全程車程約 3 小時。
+                        </p>
                     </div>
                 </div>
 
-                <!-- 住宿卡片 -->
+                <!-- 住宿卡片：全季酒店 (杭州吳山廣場店) -->
                 <div class="card card-hotel fade-in">
                     <div class="card-icon">🏨</div>
                     <div class="card-body">
-                        <span class="card-time">3月28日(六)住宿</span>
-                        <h3 class="card-title">上海如家YUNIK酒店(不含早餐)</h3>
-                        <p class="card-desc">(上海南京東路步行街地鐵站店)</p>
-                        <!-- 圖片連結區塊：寬度自適應，點擊可跳轉至詳細攻略 -->
-                        <a href="https://www.rome2rio.com/zh/map/南京东路站/中国上海黃浦區天津路479号" target="_blank"
-                            class="media-figure">
-                            <img src="Photo/Landmark/上海如家YUNIK酒店.webp" alt="上海如家YUNIK酒店">
-                            <figcaption class="media-caption">📍 上海如家YUNIK酒店 - 位於南京東路步行街地鐵站附近，地理位置優越。</figcaption>
-                        </a>
-                        <a href="https://tw.trip.com/hotels/shanghai-hotel-detail-105989751/yunik-hotel/"
-                            target="_blank" class="card-link">
-                            � 上海如家YUNIK飯店trip簡介(含照片與附近景點)
+                        <span class="card-time">4月1日(四) 入住</span>
+                        <h3 class="card-title">全季酒店 (杭州西湖吳山廣場店)</h3>
+                        <p class="card-desc"><strong>Trip.com 評分高達 9.5 分！</strong>
+                            地處西湖湖濱與吳山商圈交會處，地理位置極為優越，步行即可達河坊街與南宋御街，周遭生活機能極佳。</p>
+                        <a href="https://tw.trip.com/hotels/hangzhou-hotel-detail-1120532/ji-hotel-hangzhou-west-lake-hubin/"
+                            target="_blank" rel="noopener noreferrer" class="card-link">
+                            📍 開啟 Trip.com 查看飯店詳情與實景設施
                         </a>
                     </div>
                 </div>
 
-                <!-- 景點推薦 -->
-                <div class="card card-attraction fade-in">
-                    <div class="card-icon">🏛️</div>
-                    <div class="card-body">
-                        <h3 class="card-title">推薦景點</h3>
-                        <div class="attraction-list">
-                            <div class="attraction-item"
-                                style="flex-direction: column; align-items: flex-start; gap: 8px;">
-                                <!-- 標題與描述 -->
-                                <div style="width: 100%;">
-                                    <div class="card-title" style="margin-bottom: 4px;">南京步行街(距離約150公尺)</div>
-                                    <div class="card-desc" style="white-space: normal;">
-                                        📍全長1.5公里，是中國最著名、最繁華的商業街之一，有「中華商業第一街」之稱</div>
-                                </div>
-
-                                <!-- 圖片連結區塊：寬度自適應，點擊可跳轉至詳細攻略 -->
-                                <a href="https://heidihihi.com/nanjing-road-street/" target="_blank"
-                                    class="media-figure">
-                                    <img src="Photo/Landmark/南京路步行街.webp" alt="南京路步行街">
-                                    <figcaption class="media-caption">南京路步行街 - 全長1.5公里，中華商業第一街</figcaption>
-                                </a>
-
-                                <!-- 文字連結 -->
-                                <a href="https://heidihihi.com/nanjing-road-street/" target="_blank" class="card-link">
-                                    📍 2024上海南京路步行街美食購物全攻略
-                                </a>
-                            </div>
-
-                            <div class="attraction-item"
-                                style="flex-direction: column; align-items: flex-start; gap: 8px;">
-                                <div style="width: 100%;">
-                                    <div class="card-title" style="margin-bottom: 4px;">上海外灘萬國建築群</div>
-                                    <div class="card-desc" style="white-space: normal;">「外灘」全長1.5公里，矗立著52幢風格迥異的古典復興大樓。
-                                    </div>
-                                </div>
-
-                                <!-- 上海外灘影片 -->
-                                <figure class="media-figure">
-                                    <video width="100%" style="aspect-ratio: 9 / 16;" controls preload="metadata"
-                                        poster="Photo/Landmark/上海外灘萬國建築群.jpg">
-                                        <source src="Photo/Landmark/上海外灘.mp4" type="video/mp4">
-                                        您的瀏覽器不支援影片播放。
-                                    </video>
-                                    <figcaption class="media-caption">🎬 上海外灘萬國建築群 - 全長1.5公里，矗立著52幢風格迥異的古典復興大樓
-                                    </figcaption>
-                                </figure>
-
-                                <!-- 文字連結 -->
-                                <a href="https://www.artisan.com.tw/blog/blog_article.aspx?article=592" target="_blank"
-                                    class="card-link">
-                                    📍 上海外灘萬國建築群
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 夜間活動 -->
-                <div class="card card-night fade-in">
-                    <div class="card-icon">🌃</div>
-                    <div class="card-body">
-                        <h3 class="card-title">夜間活動</h3>
-                        <p class="card-title">東方明珠塔</p>
-                        <p class="card-desc">門票：💰二球觀光199元、三球觀光299元、二球觀光+旋轉餐廳自助餐368元起</p>
-                        <p class="card-desc">※二球觀光：可參觀 263 公尺主觀光層、259 公尺全透明懸空觀光廊、90 公尺戶外觀光廊、78公尺《更上·海》環動多媒體秀
-                            以及上海城市歷史發展陳列館。</p>
-                        <p class="card-desc">※三球觀光：可參觀 351 公尺星際啟元航天文旅展、263 公尺主觀光層、259 公尺全透明懸空觀光廊、90
-                            公尺戶外觀光廊、78公尺《更上·海》環動多媒體秀以及上海城市歷史發展陳列館。</p>
-
-                        <!-- 圖片連結區塊：寬度自適應，點擊可跳轉至詳細攻略 -->
-                        <a href="https://www.davidwin.net/?p=47030" target="_blank" class="media-figure">
-                            <img src="Photo/Landmark/東方明珠塔.jpg" alt="東方明珠塔">
-                            <figcaption class="media-caption">東方明珠塔 - 上海地標建築，可觀賞360度壯麗城市全景</figcaption>
-                        </a>
-
-                        <!-- 文字連結 -->
-                        <a href="https://www.davidwin.net/?p=47030" target="_blank" class="card-link">
-                            📍 【上海景點】上海地標建築：東方明珠塔
-                        </a>
-
-                        <p class="card-desc">東方明珠塔的亮燈時間會根據季節的不同有所變化：</p>
-                        <p class="card-desc">🔹夏季：晚上19：00開始亮燈，持續到22:30</p>
-                        <p class="card-desc">🔹冬季：晚上18：00開始亮燈，持續到22:00</p>
-                        <p class="card-desc">🔹特殊情況：在5月20日晚，東方明珠塔會點亮粉色主題燈光，並打出「520」等字樣，亮燈時間從19:00持續到23：00</p>
-
-                        <!-- 圖片連結區塊：寬度自適應，點擊可跳轉至詳細攻略 -->
-                        <a href="https://www.davidwin.net/?p=47030" target="_blank" class="media-figure">
-                            <img src="Photo/Landmark/東方明珠塔.avif" alt="東方明珠塔夜景">
-                            <figcaption class="media-caption">東方明珠塔夜景 - 夏季19:00開始亮燈，冬季18:00開始亮燈</figcaption>
-                        </a>
-
-                        <p class="card-title">夜遊黃浦江遊船</p>
-                        <p class="card-desc">
-                            搭乘中華號和東方明珠號浦江觀光遊船，碼頭位於明珠塔西面200多公尺處的海鷗舫，白天從10:00開始就有多個班次，晚上19:00、20:00各有一班;行程將近一小時。</p>
-
-                        <!-- 圖片連結區塊：寬度自適應，點擊可跳轉至詳細攻略 -->
-                        <a href="https://www.davidwin.net/?p=70246" target="_blank" class="media-figure">
-                            <img src="Photo/Landmark/夜遊黃浦江遊船.avif" alt="夜遊黃浦江遊船">
-                            <figcaption class="media-caption">夜遊黃浦江遊船 - 晚上19:00、20:00各有一班，行程約一小時</figcaption>
-                        </a>
-
-                        <a href="https://www.davidwin.net/?p=70246" target="_blank" class="card-link">
-                            📍 【上海攻略】正確賞玩黃浦江的方式，觀光遊船 vs. 2元渡輪
-                        </a>
-                        <p class="tip">📸 最佳拍照點：白玉蘭廣場L層-人民咖啡館 / 陸家嘴圓環天橋</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 當天相簿連結（不隨行程折疊） -->
-            <div class="card card-album fade-in">
-                <div class="card-icon">📸</div>
-                <div class="card-body">
-                    <h3 class="card-title">3月28日 (六) 相簿</h3>
-                    <p class="card-desc">瀏覽今日精彩照片</p>
-                    <a href="https://l101-nas.tailbf5fb.ts.net:8443/share/OH2_eZjBY3seWxUJ_7jnOgOfNmysVb4lN2SAwVMZw00-iHqOrdfNhDPVkGo56KiYc1w"
-                        target="_blank" class="card-link album-link">
-                        📷 開啟 IMMICH 相簿
-                    </a>
-                </div>
             </div>
         </section>
 
-        <!-- ========== Day 2: 3月29日 上海 → 成都 ========== -->
-        <section class="day-section" id="day2" data-date="2026-03-29">
+        <!-- ============================================
+             Day 2: 2027年 4月2日 (五) 靈隱祈福 ➔ 西溪濕地生態漫遊 ➔ 杭城晚景
+             - 08:30 專車前往靈隱寺、飛來峰石窟造像與冷泉飛瀑
+             - 12:00 靈隱周邊自理午餐（杭幫菜/素齋麵）
+             - 13:30 西溪國家濕地公園（水上森林搖櫓船）
+             - 17:00 步行遊覽河坊街、南宋御街小吃夜市
+             - 宿：全季酒店 (杭州吳山廣場店)
+        ============================================ -->
+        <section class="day-section" id="day2" data-date="2027-04-02">
             <div class="day-header collapsible-trigger">
                 <div class="day-number">02</div>
                 <div class="day-info">
-                    <span class="day-date">3月29日 (日)</span>
-                    <h2 class="day-title">上海 → 成都</h2>
-                    <p class="day-highlight">太古里・春熙路・九眼橋夜景</p>
+                    <span class="day-date">4月2日 (五)</span>
+                    <h2 class="day-title">靈隱祈福 ➔ 西溪濕地生態漫遊 ➔ 杭城晚景</h2>
+                    <p class="day-highlight">靈隱寺參拜・飛來峰石窟摩崖造像・西溪水上森林搖櫓船・河坊街南宋御街老字號美饌</p>
                 </div>
                 <div class="collapse-icon">▼</div>
             </div>
 
-            <!-- 今日攻略圖（不隨行程折疊） -->
-            <div class="card fade-in" style="padding: 0; overflow: hidden;">
-                <img src="Photo/Itinerary/2026-03-29-1.png" alt="3月29日 行程攻略圖"
-                    style="width: 100%; height: auto; border-radius: 12px; display: block;">
-            </div>
-            <a href="https://www.nmc.cn/publish/forecast/ASC/chengdu.html" target="_blank" class="card-link">
-                ⛅ 成都天氣預報
+            <a href="https://www.nmc.cn/publish/forecast/AZJ/hangzhou.html" target="_blank" rel="noopener noreferrer"
+                class="card-link" style="margin-bottom: 1rem; display: inline-flex;">
+                ⛅ 杭州即時天氣預報
             </a>
 
             <div class="day-content">
-                <!-- 今日攻略圖 -->
-                <div class="card fade-in" style="padding: 0; overflow: hidden;">
-                    <img src="Photo/Itinerary/2026-03-29-2.png" alt="3月29日 行程攻略圖"
-                        style="width: 100%; height: auto; border-radius: 12px; display: block;">
-                </div>
 
-                <!-- 早起交通 -->
-                <div class="card card-transport fade-in">
-                    <div class="card-icon">🚇</div>
+                <!-- 景點卡片：靈隱寺與飛來峰 -->
+                <div class="card card-attraction fade-in">
+                    <div class="card-icon">🛕</div>
                     <div class="card-body">
-                        <span class="card-time">05:30出發</span>
-                        <h3 class="card-title">搭乘地鐵10號線第一班次(05:49)前往虹橋機場T1航廈</h3>
-                        <p class="card-desc">約06:20抵達</p>
-                    </div>
-                </div>
-
-                <!-- 航班示意圖卡片 -->
-                <div class="card fade-in" style="padding: 0; overflow: hidden;">
-                    <img src="Photo/Itinerary/上海飛成都.png" alt="3月29日 上海飛成都"
-                        style="width: 100%; height: auto; border-radius: 12px; display: block;">
-                </div>
-
-                <!-- 航班卡片 -->
-                <div class="card card-flight fade-in">
-                    <div class="flight-header">
-                        <span class="airline">春秋航空 9C8819 (空中巴士A320-212)</span>
-                    </div>
-                    <div class="flight-route">
-                        <div class="flight-city">
-                            <span class="flight-time">07:50</span>
-                            <span class="flight-name">上海虹橋 T1</span>
-                        </div>
-                        <div class="flight-line">
-                            <span class="flight-icon">✈</span>
-                        </div>
-                        <div class="flight-city">
-                            <span class="flight-time">10:50</span>
-                            <span class="flight-name">成都天府 T2</span>
-                        </div>
-                    </div>
-
-                    <!-- 春秋航空行李限制 -->
-                    <div class="flight-baggage">
-                        <div class="baggage-title">
-                            <span>🧳</span> 行李限制規定
-                        </div>
-                        <div class="baggage-list">
-                            <div class="baggage-item">
-                                <span class="baggage-icon">👜</span>
-                                <div class="baggage-text">
-                                    <strong>手提行李：</strong>7公斤/件，體積 20×30×40cm
-                                </div>
-                            </div>
-                            <div class="baggage-item">
-                                <span class="baggage-icon">🧳</span>
-                                <div class="baggage-text">
-                                    <strong>托運行李：</strong>20公斤/件
-                                </div>
-                            </div>
-                            <div class="baggage-note">
-                                ⚠️ 超重或超件費用：按件收取，每件(≤10KG) 人民幣 300 元
-                            </div>
+                        <span class="card-time">08:30</span>
+                        <h3 class="card-title">專車出發・【靈隱寺】參拜祈福與【飛來峰】石窟造像</h3>
+                        <p class="card-desc">
+                            酒店享用豐盛早餐後，搭乘專車前往江南禪宗五山之首——<strong>靈隱寺</strong>。走訪千年古剎大雄寶殿、天王殿，順遊<strong>飛來峰</strong>探訪宋元時期珍貴的摩崖石刻造像、大肚彌勒佛石雕與冷泉飛瀑，感受空靈禪韻與山水勝景。
+                        </p>
+                        <!-- 靈隱寺與飛來峰實景照片與特色導讀圖 -->
+                        <figure class="media-figure">
+                            <img src="Photo/Landmark/靈隱寺.webp" alt="杭州靈隱寺山門勝景" loading="lazy">
+                            <figcaption class="media-caption">📷 杭州靈隱寺——千年古剎香火鼎盛，靈鷲飛來禪意深遠</figcaption>
+                        </figure>
+                        <a href="https://gochina.com.tw/hangzhou-feilaifeng-lingyin-temple/" target="_blank"
+                            rel="noopener noreferrer" class="media-figure">
+                            <img src="Photo/Landmark/為什麼杭州旅遊一定要來飛來峰靈隱寺.jpg" alt="為什麼杭州旅遊一定要來飛來峰靈隱寺攻略圖" loading="lazy">
+                            <figcaption class="media-caption">📍 必訪攻略：為什麼杭州旅遊一定要來飛來峰靈隱寺？（點擊查看詳解）</figcaption>
+                        </a>
+                        <!-- 攻略外部超連結按鈕 -->
+                        <div style="display: flex; flex-direction: column; gap: 0.5rem; margin-top: 0.75rem;">
+                            <a href="https://www.davidwin.net/?p=34262" target="_blank" rel="noopener noreferrer"
+                                class="card-link">
+                                🔗 充滿傳奇的飛來峰、靈隱寺深度圖文解析
+                            </a>
+                            <a href="https://gochina.com.tw/hangzhou-feilaifeng-lingyin-temple/" target="_blank"
+                                rel="noopener noreferrer" class="card-link">
+                                🔗 杭州飛來峰靈隱寺介紹｜必訪千年古剎、參拜重點與旅遊攻略
+                            </a>
                         </div>
                     </div>
                 </div>
 
-                <!-- 接機說明 -->
-                <div class="card card-info fade-in">
-                    <div class="card-icon">🚗</div>
+                <!-- 美食卡片：自理午餐 -->
+                <div class="card card-food fade-in">
+                    <div class="card-icon">🍜</div>
                     <div class="card-body">
-                        <h3 class="card-title">司機接機</h3>
-                        <p class="card-desc">司機接機後，前往酒店辦理入住</p>
-                        <p class="note">⚠️ 當天無導遊，司機僅負責接機並送回酒店</p>
+                        <span class="card-time">12:00</span>
+                        <h3 class="card-title">靈隱景區自理午餐（推薦杭幫菜 / 靈隱素齋麵）</h3>
+                        <p class="card-desc">靈隱寺出口周邊有許多雅緻茶肆與素齋館，推薦品嚐聞名遐邇的靈隱十願素麵、羅漢齋麵或地道杭幫小炒，清心養胃。</p>
+                        <div class="food-list">
+                            <span class="food-item">靈隱素齋素麵</span>
+                            <span class="food-item">西湖藕粉羹</span>
+                            <span class="food-item">龍井茶香豆腐</span>
+                            <span class="food-item">杭三鮮砂鍋</span>
+                        </div>
                     </div>
                 </div>
 
-                <!-- 住宿卡片 -->
+                <!-- 景點卡片：西溪國家濕地公園 -->
+                <div class="card card-attraction fade-in">
+                    <div class="card-icon">🛶</div>
+                    <div class="card-body">
+                        <span class="card-time">13:30</span>
+                        <h3 class="card-title">【西溪國家濕地公園】水上森林漫遊（搭乘搖櫓船）</h3>
+                        <p class="card-desc">專車前往中國首個集城市濕地、農耕濕地與文化濕地於一體的國家 5A
+                            級景區。<strong>搭乘傳統特色搖櫓木船</strong>穿梭於港汊交錯的水上森林與蘆葦蕩，聆聽船槳划水聲，走訪福堤與煙水漁莊，深切體會宋高宗「西溪且留下」的恬淡自然野趣。</p>
+                        <!-- 西溪國家濕地公園實景照片 -->
+                        <a href="https://blog.udn.com/shine016/180042750" target="_blank" rel="noopener noreferrer"
+                            class="media-figure">
+                            <img src="Photo/Landmark/西溪國家濕地公園.jpg" alt="西溪國家濕地公園水上森林搖櫓船" loading="lazy">
+                            <figcaption class="media-caption">📷 杭州西溪國家濕地公園——「西溪且留下」，水網縱橫港汊交錯之水上仙境</figcaption>
+                        </a>
+                        <a href="https://blog.udn.com/shine016/180042750" target="_blank" rel="noopener noreferrer"
+                            class="card-link" style="margin-top: 0.75rem;">
+                            🔗 杭州西溪國家濕地公園：水上森林與搖櫓船全景遊記
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 景點/美食卡片：河坊街與南宋御街夜景 -->
+                <div class="card card-night fade-in">
+                    <div class="card-icon">🏮</div>
+                    <div class="card-body">
+                        <span class="card-time">17:00</span>
+                        <h3 class="card-title">返抵飯店・步行漫步【河坊街】與【南宋御街】晚景散策</h3>
+                        <p class="card-desc">
+                            專車返回飯店稍事整裝後，步行前往飯店旁的歷史文化街區。南宋御街為昔日臨安皇城御道，河坊街則保留明清江南古街風格，入夜後紅燈籠高掛，可在此大啖地道傳統小吃並挑選精緻伴手禮。</p>
+                        <div class="food-list">
+                            <span class="food-item">定勝糕（軟糯香甜）</span>
+                            <span class="food-item">蔥包檜（酥脆沾醬）</span>
+                            <span class="food-item">知味觀小籠包</span>
+                            <span class="food-item">胡慶餘堂傳統草本茶</span>
+                        </div>
+                        <div style="display: flex; flex-direction: column; gap: 0.5rem; margin-top: 0.75rem;">
+                            <a href="https://blog.udn.com/shine016/180833119" target="_blank" rel="noopener noreferrer"
+                                class="card-link">
+                                🔗 漫步河坊街：歷史街景與百年老店遊記
+                            </a>
+                            <a href="https://drugs.pixnet.net/blog/posts/3039340941" target="_blank"
+                                rel="noopener noreferrer" class="card-link">
+                                🔗 【杭州自由行】南宋御街、河坊街：歷史縮影、好買好逛與夜景氛圍攻略
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 住宿卡片：全季酒店 (杭州吳山廣場店) -->
                 <div class="card card-hotel fade-in">
                     <div class="card-icon">🏨</div>
                     <div class="card-body">
-                        <span class="card-time">3月29日(日)住宿</span>
-                        <h3 class="card-title">成都麗呈明宇麗雅飯店(含早餐)</h3>
-                        <p class="card-desc">（春熙太古里店）</p>
-                        <!-- 圖片連結區塊：寬度自適應，點擊可跳轉至詳細資訊 -->
-                        <a href="https://tw.trip.com/hotels/chengdu-hotel-detail-432140/mingyoun-central-hotel"
-                            target="_blank" class="media-figure">
-                            <img src="Photo/Landmark/成都麗呈明宇麗雅飯店.webp" alt="成都麗呈明宇麗雅飯店">
-                            <figcaption class="media-caption">📍 成都麗呈明宇麗雅飯店 - 位於春熙太古里商圈，交通便利</figcaption>
-                        </a>
-                        <a href="https://tw.trip.com/hotels/chengdu-hotel-detail-432140/mingyoun-central-hotel"
-                            target="_blank" class="card-link">
-                            � 成都麗呈明宇麗雅飯店trip簡介(含照片與附近景點)
-                        </a>
+                        <span class="card-time">4月2日(五) 續住</span>
+                        <h3 class="card-title">宿：全季酒店 (杭州吳山廣場店)</h3>
+                        <p class="card-desc">逛完河坊街後可從容漫步返回飯店休息，享受安靜舒適的睡眠環境，免去更換飯店行李搬運之苦。</p>
                     </div>
                 </div>
 
-                <!-- 景點推薦 -->
-                <div class="card card-attraction fade-in">
-                    <div class="card-icon">🏛️</div>
-                    <div class="card-body">
-                        <h3 class="card-title">推薦景點</h3>
-                        <div class="attraction-list">
-                            <div class="attraction-item"
-                                style="flex-direction: column; align-items: flex-start; gap: 8px;">
-                                <div style="width: 100%;">
-                                    <div class="card-title" style="margin-bottom: 4px;">天府廣場(距離約310公尺)</div>
-                                    <div class="card-desc" style="white-space: normal;">
-                                        📍成都市中心地標，中國西部最大的城市中心廣場。天府廣場是成都的城市地標和象徵，廣場周邊有著名的成都博物館新館、四川科技館、錦城藝術宮等建築。東側有春熙路、王府井；北側有文殊院；西側有人民公園、寬窄巷子、錦里等。
-                                    </div>
-                                </div>
-                                <!-- 圖片連結區塊：寬度自適應，點擊可跳轉至詳細攻略 -->
-                                <a href="https://www.xizanglvyou.org/26620.html" target="_blank" class="media-figure">
-                                    <img src="Photo/Landmark/成都天府廣場.jpeg" alt="成都天府廣場">
-                                    <figcaption class="media-caption">成都天府廣場 - 中國西部最大的城市中心廣場</figcaption>
-                                </a>
-
-                                <!-- 文字連結 -->
-                                <a href="https://www.xizanglvyou.org/26620.html" target="_blank" class="card-link">
-                                    📍 成都天府廣場旅遊攻略：探索城市心臟的歷史與現代
-                                </a>
-                            </div>
-
-                            <div class="attraction-item"
-                                style="flex-direction: column; align-items: flex-start; gap: 8px;">
-                                <div style="width: 100%;">
-                                    <div class="card-title" style="margin-bottom: 4px;">成都市人民公園(距離約1.1公里)</div>
-                                    <div class="card-desc" style="white-space: normal;">
-                                        📍成都市區最大的綜合性公園，體驗蓋碗茶文化的最佳去處</div>
-                                </div>
-
-                                <!-- 圖片連結區塊：寬度自適應，點擊可跳轉至詳細攻略 -->
-                                <a href="https://www.sohu.com/a/475351737_115776" target="_blank" class="media-figure">
-                                    <img src="Photo/Landmark/成都市人民公園.jpg" alt="成都市人民公園">
-                                    <figcaption class="media-caption">成都市人民公園 - 體驗蓋碗茶文化的最佳去處</figcaption>
-                                </a>
-
-                                <!-- 文字連結 -->
-                                <a href="https://www.sohu.com/a/475351737_115776" target="_blank" class="card-link">
-                                    📍 成都市人民公園四大玩法
-                                </a>
-                            </div>
-
-                            <div class="attraction-item"
-                                style="flex-direction: column; align-items: flex-start; gap: 8px;">
-                                <div style="width: 100%;">
-                                    <div class="card-title" style="margin-bottom: 4px;">太古里/春熙路商圈(距離約1.4公里)</div>
-                                    <div class="card-desc" style="white-space: normal;">
-                                        📍成都最繁華的商業步行街，匯集眾多品牌與美食</div>
-                                </div>
-
-                                <!-- 圖片連結區塊：寬度自適應，點擊可跳轉至詳細攻略 -->
-                                <a href="https://andyventure.com/china-sichuan-chengdu-chunxi-road/" target="_blank"
-                                    class="media-figure">
-                                    <img src="Photo/Landmark/成都太古里.webp" alt="成都太古里">
-                                    <figcaption class="media-caption">成都太古里 - 成都最繁華的商業購物中心</figcaption>
-                                </a>
-                                <a href="https://andyventure.com/china-sichuan-chengdu-chunxi-road/" target="_blank"
-                                    class="media-figure">
-                                    <img src="Photo/Landmark/成都太古里IFS大熊貓.jpg" alt="成都太古里IFS大熊貓">
-                                    <figcaption class="media-caption">IFS大熊貓 - 國際金融中心的網紅打卡地標</figcaption>
-                                </a>
-                                <a href="https://andyventure.com/china-sichuan-chengdu-chunxi-road/" target="_blank"
-                                    class="media-figure">
-                                    <img src="Photo/Landmark/成都太古里IFS國際金融中心外牆.jpg" alt="成都太古里IFS國際金融中心外牆">
-                                    <figcaption class="media-caption">IFS國際金融中心外牆 - 巨型廣告螢幕與現代建築</figcaption>
-                                </a>
-                                <a href="https://andyventure.com/china-sichuan-chengdu-chunxi-road/" target="_blank"
-                                    class="media-figure">
-                                    <img src="Photo/Landmark/成都太古里春熙路.webp" alt="成都太古里春熙路">
-                                    <figcaption class="media-caption">春熙路步行街 - 成都最熱鬧的逗街購物區</figcaption>
-                                </a>
-
-                                <!-- 裸眼3D大熊貓影片 -->
-                                <figure class="media-figure">
-                                    <video width="100%" style="aspect-ratio: 16 / 9;" controls preload="metadata"
-                                        poster="Photo/Landmark/成都太古里IFS大熊貓.jpg">
-                                        <source src="Photo/Landmark/裸眼3D大熊貓.mp4" type="video/mp4">
-                                        您的瀏覽器不支援影片播放。
-                                    </video>
-                                    <figcaption class="media-caption">🎬 裸眼3D大熊貓 - IFS國際金融中心外牆的震撼視覺特效</figcaption>
-                                </figure>
-
-                                <a href="https://andyventure.com/china-sichuan-chengdu-chunxi-road/" target="_blank"
-                                    class="media-figure">
-                                    <img src="Photo/Landmark/成都太古里春熙路地圖.webp" alt="成都太古里春熙路地圖">
-                                    <figcaption class="media-caption">春熙路商圈導覽圖 - 包含各大商場與景點位置</figcaption>
-                                </a>
-
-                                <!-- 文字連結 -->
-                                <a href="https://andyventure.com/china-sichuan-chengdu-chunxi-road/" target="_blank"
-                                    class="card-link">
-                                    📍 春熙路步行街遊記
-                                </a>
-                            </div>
-
-                            <div class="attraction-item"
-                                style="flex-direction: column; align-items: flex-start; gap: 8px;">
-                                <div style="width: 100%;">
-                                    <div class="card-title" style="margin-bottom: 4px;">成都大慈寺(距離約1.4公里)</div>
-                                    <div class="card-desc" style="white-space: normal;">
-                                        📍始建於魏晉時期的千年古剎，西元622年玄奘二十歲時，正式在此寺受具足戒，唐玄宗曾賜額“敕建大聖慈寺”。</div>
-                                </div>
-
-                                <!-- 圖片連結區塊：寬度自適應，點擊可跳轉至詳細攻略 -->
-                                <a href="https://blog.udn.com/leica88/131787565" target="_blank" class="media-figure">
-                                    <img src="Photo/Landmark/成都大慈寺.jpg" alt="成都大慈寺">
-                                    <figcaption class="media-caption">成都大慈寺 - 千年古刹，玄奘受戒處</figcaption>
-                                </a>
-
-                                <!-- 文字連結 -->
-                                <a href="https://blog.udn.com/leica88/131787565" target="_blank" class="card-link">
-                                    📍 成都大慈寺
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 夜間活動 -->
-                <div class="card card-night fade-in">
-                    <div class="card-icon">🌉</div>
-                    <div class="card-body">
-                        <h3 class="card-title">九眼橋夜景</h3>
-                        <p class="card-desc">欣賞成都最美夜景，感受酒吧街氛圍</p>
-
-                        <!-- 圖片連結區塊：寬度自適應，點擊可跳轉至詳細攻略 -->
-                        <a href="https://gochina.com.tw/chengdu-jiuyan-bridge-nightlife-guide/" target="_blank"
-                            class="media-figure">
-                            <img src="Photo/Landmark/九眼橋.jpg" alt="九眼橋">
-                            <figcaption class="media-caption">九眼橋 - 成都最美夜景地標之一</figcaption>
-                        </a>
-                        <a href="https://gochina.com.tw/chengdu-jiuyan-bridge-nightlife-guide/" target="_blank"
-                            class="media-figure">
-                            <img src="Photo/Landmark/九眼橋夜景.avif" alt="九眼橋夜景">
-                            <figcaption class="media-caption">九眼橋夜景 - 欣賞酒吧街氛圍的最佳位置</figcaption>
-                        </a>
-
-                        <!-- 文字連結 -->
-                        <a href="https://gochina.com.tw/chengdu-jiuyan-bridge-nightlife-guide/" target="_blank"
-                            class="card-link">
-                            📍 成都九眼橋夜生活指南
-                        </a>
-
-                    </div>
-                </div>
-
-                <!-- 高反注意事項 -->
-                <div class="card card-warning fade-in">
-                    <div class="card-icon">⚠️</div>
-                    <div class="card-body">
-                        <h3 class="card-title">高反預防備註</h3>
-                        <p class="card-desc">💊 預防高反，記得去藥局買 <strong>紅景天/丹木斯</strong>，或在台灣直接去藥房買<strong>海拔適</strong></p>
-                        <div class="medicine-info">
-                            <p>📋 服用方式：上山前一天開始吃，一天2次、一次半顆，下了山就不用再吃</p>
-                            <p>💦 充足水分：九寨溝氣候較乾燥，空氣含氧量較低，因此請確保在旅行過程中保持充足的水分攝入。</p>
-                            <p>👩‍🔬 常備藥物：帶上一些常用藥物，如消炎藥、止痛藥、感冒藥、腸胃藥等，尤其是在高海拔地區，突發的健康問題較難及時就醫。</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 黃龍及九寨溝注意事項 -->
-                <div class="card card-warning fade-in">
-                    <div class="card-icon">⚠️</div>
-                    <div class="card-body">
-                        <h3 class="card-title">黃龍及九寨溝注意事項</h3>
-                        <p class="card-desc">✨ 自備飲食、保暖衣物、防雨防曬</p>
-                        <div class="medicine-info">
-                            <p>🥣 九寨溝的飲食以藏族特色和川菜為主，食材多為當地特產，口味獨特，但也可能較貴，建議可帶些零食。</p>
-                            <p>🥣 九寨溝整個景區只有在Y交叉點的諾日朗中心店有吃的，餐廳也只有一家，僅提供自助午餐。</p>
-                            <p>🥣 九寨溝景區內餐食選擇較少建議自備自熱米飯和小零食。進溝前可采購巧克力、水、牛肉、柚子等水果。</p>
-                            <p>🥼 九寨溝、黃龍地區早晚溫差大，帶好御寒衣服。女生的防曬霜之類瓶瓶罐罐一定要蓋緊，否則也會高原反應，流您包包裡一塌糊塗。</p>
-                            <p>💳 九寨溝和黃龍景區的門票和車票一定一定要保管好！特別是車票，因為每一站都需要出示車票。</p>
-                            <p>⛱︎ 九寨溝經常會有陣雨，一定要隨身帶雨傘或雨衣。不過一場雨一般不會超過半個小時。</p>
-                            <p>🌞 雖然九寨溝氣溫較低，但陽光照射強烈紫外線強，特別是在春夏季節，因此防曬工作十分重要，記得帶好防曬霜、太陽鏡和帽子，以保護皮膚。</p>
-                            <p>💰 想在九寨溝景區內租藏裝拍照的，一定要記得砍價，不要覺得不好意思。如果想要買彩繩編髮的話可以在松潘古城里面買（松潘古城是10元3根，九寨溝是10元2根）。</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 當天相簿連結（不隨行程折疊） -->
-            <div class="card card-album fade-in">
-                <div class="card-icon">📸</div>
-                <div class="card-body">
-                    <h3 class="card-title">3月29日 (日) 相簿</h3>
-                    <p class="card-desc">瀏覽今日精彩照片</p>
-                    <a href="https://l101-nas.tailbf5fb.ts.net:8443/share/10C3y8-pI2hE-wNR6wDi6VSZr3qvRTy21JMz6PmtwjP03xHqTy5Ef6GwnXkZOB7zGCQ"
-                        target="_blank" class="card-link album-link">
-                        📷 開啟 IMMICH 相簿
-                    </a>
-                </div>
             </div>
         </section>
 
-        <!-- ========== Day 3: 3月30日 成都 → 黃龍 ========== -->
-        <section class="day-section" id="day3" data-date="2026-03-30">
+        <!-- ============================================
+             Day 3: 2027年 4月3日 (六) 西湖勝景 ➔ 杭州宋城主題公園
+             - 08:30 西湖風景區遊船、蘇堤春曉、花港觀魚、登上雷峰塔
+             - 12:00 西湖周邊自理午餐
+             - 13:30 宋城主題公園、世界三大名秀《宋城千古情》
+             - 19:30 演出結束專車接回飯店或武林夜市
+             - 宿：全季酒店 (杭州吳山廣場店)
+        ============================================ -->
+        <section class="day-section" id="day3" data-date="2027-04-03">
             <div class="day-header collapsible-trigger">
                 <div class="day-number">03</div>
                 <div class="day-info">
-                    <span class="day-date">3月30日 (一)</span>
-                    <h2 class="day-title">成都 → 黃龍景區</h2>
-                    <p class="day-highlight">高鐵・黃龍鈣華彩池・雪山森林</p>
+                    <span class="day-date">4月3日 (六)</span>
+                    <h2 class="day-title">西湖勝景 ➔ 登雷峰塔 ➔ 宋城千古情</h2>
+                    <p class="day-highlight">西湖遊船遠眺三潭印月・蘇堤春曉與花港觀魚・登雷峰塔俯瞰西湖全貌・世界三大名秀《宋城千古情》</p>
                 </div>
                 <div class="collapse-icon">▼</div>
             </div>
 
-            <!-- 今日攻略圖（不隨行程折疊） -->
-            <div class="card fade-in" style="padding: 0; overflow: hidden;">
-                <img src="Photo/Itinerary/2026-03-30-3.png" alt="3月30日 行程攻略圖"
-                    style="width: 100%; height: auto; border-radius: 12px; display: block;">
-            </div>
-            <a href="https://tianqi.moji.com/forecast15/china/sichuan/huanglong-national-scenic-and-historic-interest-area"
-                target="_blank" class="card-link">
-                ⛅ 黃龍景區天氣預報
+            <a href="https://www.nmc.cn/publish/forecast/AZJ/hangzhou.html" target="_blank" rel="noopener noreferrer"
+                class="card-link" style="margin-bottom: 1rem; display: inline-flex;">
+                ⛅ 杭州即時天氣預報
             </a>
 
             <div class="day-content">
-                <!-- 今日攻略圖 -->
-                <div class="card fade-in" style="padding: 0; overflow: hidden;">
-                    <img src="Photo/Itinerary/2026-03-30-2.png" alt="3月30日 行程攻略圖"
-                        style="width: 100%; height: auto; border-radius: 12px; display: block;">
-                </div>
 
-                <!-- 高鐵卡片 -->
-                <div class="card card-train fade-in">
-                    <div class="train-header">
-                        <span class="train-number">🚄 動車C5762</span>
-                    </div>
-                    <div class="flight-route">
-                        <div class="flight-city">
-                            <span class="flight-time">09:39</span>
-                            <span class="flight-name">成都東站</span>
-                        </div>
-                        <div class="flight-line">
-                            <span class="flight-icon">→</span>
-                            <span class="duration">約1.5小時</span>
-                        </div>
-                        <div class="flight-city">
-                            <span class="flight-time">11:12</span>
-                            <span class="flight-name">松潘站</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 高鐵動車座位圖 -->
-                <div class="card fade-in" style="padding: 0; overflow: hidden;">
-                    <img src="Photo/Itinerary/高鐵動車座位表.png" alt="高鐵動車座位表"
-                        style="width: 100%; height: auto; border-radius: 12px; display: block;">
-                </div>
-
-                <!-- 車程說明 -->
-                <div class="card card-transport fade-in">
-                    <div class="card-icon">🚗</div>
-                    <div class="card-body">
-                        <span class="card-time">11:30-13:00</span>
-                        <h3 class="card-title">司機接站</h3>
-                        <p class="card-desc">乘車前往黃龍景區（約1.5小時車程）</p>
-                    </div>
-                </div>
-
-                <!-- 黃龍景區 -->
+                <!-- 景點卡片：杭州西湖風景區 -->
                 <div class="card card-attraction fade-in">
-                    <div class="card-icon">🏔️</div>
+                    <div class="card-icon">🏞️</div>
                     <div class="card-body">
-                        <h3 class="card-title">黃龍景區遊覽</h3>
-                        <p class="card-subtitle">⏱️ 約4小時</p>
-                        <p class="card-desc">黃龍風景區以金黃色的階梯狀鈣華池著名，這種景觀是世界上罕見的「大型高山鈣華地貌」。</p>
-                        <!-- 圖片連結區塊：寬度自適應，點擊可跳轉至詳細攻略 -->
-                        <a href="https://andyventure.com/china-sichuan-huanglong/" target="_blank" class="media-figure">
-                            <img src="Photo/Landmark/黃龍風景區.webp" alt="黃龍風景區">
-                            <figcaption class="media-caption">黃龍風景區 - 世界自然遗產，金黃色階梯狀鈣華池</figcaption>
-                        </a>
-                        <a href="https://andyventure.com/china-sichuan-huanglong/" target="_blank" class="media-figure">
-                            <img src="Photo/Landmark/黃龍古寺.jpg" alt="黃龍古寺">
-                            <figcaption class="media-caption">黃龍古寺 - 位於海拔3568公尺，歷史悠久的藏傳佛教寺廟</figcaption>
-                        </a>
-                        <a href="https://andyventure.com/china-sichuan-huanglong/" target="_blank" class="media-figure">
-                            <img src="Photo/Landmark/黃龍五彩池.jpg" alt="黃龍五彩池">
-                            <figcaption class="media-caption">黃龍五彩池 - 黃龍最美景點，693個索絢多彩的鈣華彩池</figcaption>
-                        </a>
-                        <a href="https://andyventure.com/china-sichuan-huanglong/" target="_blank" class="media-figure">
-                            <img src="Photo/Landmark/黃龍洞.jpg" alt="黃龍洞">
-                            <figcaption class="media-caption">黃龍洞 - 天然溫泉湧出的神秘洞穴</figcaption>
-                        </a>
-                        <a href="https://andyventure.com/china-sichuan-huanglong/" target="_blank" class="media-figure">
-                            <img src="Photo/Landmark/黃龍飛瀑流輝.webp" alt="黃龍飛瀑流輝">
-                            <figcaption class="media-caption">黃龍飛瀑流輝 - 壯觀的鈣華瀑布群</figcaption>
-                        </a>
-                        <a href="https://andyventure.com/china-sichuan-huanglong/" target="_blank" class="media-figure">
-                            <img src="Photo/Landmark/黃龍蓮台飛瀑.webp" alt="黃龍蓮台飛瀑">
-                            <figcaption class="media-caption">黃龍蓮台飛瀑 - 如蓮花綻放般的瀑布景觀</figcaption>
-                        </a>
-                        <a href="https://andyventure.com/china-sichuan-huanglong/" target="_blank" class="media-figure">
-                            <img src="Photo/Landmark/黃龍瀲灩湖.webp" alt="黃龍瀲灩湖">
-                            <figcaption class="media-caption">黃龍瀲灩湖 - 波光粟粟的高山湖泊</figcaption>
-                        </a>
-                        <a href="https://andyventure.com/china-sichuan-huanglong/" target="_blank" class="media-figure">
-                            <img src="Photo/Landmark/黃龍風景區導覽圖.webp" alt="黃龍風景區導覽圖">
-                            <figcaption class="media-caption">黃龍風景區導覽圖 - 包含各景點位置與遊覽路線</figcaption>
-                        </a>
-                        <a href="https://andyventure.com/china-sichuan-huanglong/" target="_blank" class="media-figure">
-                            <img src="Photo/Landmark/黃龍溝景區地圖.png" alt="黃龍溝景區地圖">
-                            <figcaption class="media-caption">黃龍溝景區地圖 - 詳細的遊覽路線規劃</figcaption>
-                        </a>
-
-                        <!-- 文字連結 -->
-                        <a href="https://zh.wikipedia.org/zh-tw/黄龙风景名胜区" target="_blank" class="card-link">
-                            📍 黃龍風景名勝區
-                        </a>
-                        <a href="https://andyventure.com/china-sichuan-huanglong/" target="_blank" class="card-link">
-                            📍 黃龍風景區一日遊攻略－海拔3000公尺的人間瑤池，17個必看彩池介紹
-                        </a>
-
-                        <div class="highlight-list">
-                            <span class="highlight-item">✨ 鈣華彩池</span>
-                            <span class="highlight-item">🗻 雪山</span>
-                            <span class="highlight-item">🌲 森林</span>
+                        <span class="card-time">08:30</span>
+                        <h3 class="card-title">【杭州西湖風景區】搭船漫遊・走訪蘇堤花港・登上【雷峰塔】</h3>
+                        <p class="card-desc">
+                            酒店享用早餐後出發前往世界文化遺產——西湖。<strong>搭乘西湖遊船</strong>飽覽湖光山色，遠眺著名的「三潭印月」（一元人民幣背面圖案），隨後走訪十景之「蘇堤春曉」與「花港觀魚」餵錦鯉，並登上氣勢恢宏的<strong>【雷峰塔】</strong>，搭電梯登高俯瞰西湖十景全景視野！
+                        </p>
+                        <div class="powerbank-tip" style="margin-top: 0.5rem;">
+                            💡 <strong>貼心遊園叮嚀：</strong>西湖幅員遼闊，徒步走完一圈超過 15 公里，本行程巧妙結合專車接送、湖面遊船與觀光電瓶車，免走冤枉路，老少咸宜輕鬆玩透。
                         </div>
-                        <p class="tip">💡 建議：乘坐索道上行，步行下行，節省體力並觀賞全景</p>
+                        <!-- 西湖景區導覽地圖照片 -->
+                        <a href="https://heidihihi.com/westlake-hangzhou/" target="_blank" rel="noopener noreferrer"
+                            class="media-figure">
+                            <img src="Photo/Landmark/西湖地圖.webp" alt="西湖遊覽十景全景路線地圖" loading="lazy">
+                            <figcaption class="media-caption">🗺️ 杭州西湖景區全景導覽地圖——十景遊湖路線與雷峰塔登頂方位（點擊看攻略）</figcaption>
+                        </a>
+                        <a href="https://heidihihi.com/westlake-hangzhou/" target="_blank" rel="noopener noreferrer"
+                            class="card-link" style="margin-top: 0.75rem;">
+                            🔗 西湖一日遊攻略｜十景路線不走回頭路，爆走1萬步玩透完整解析
+                        </a>
                     </div>
                 </div>
 
-                <!-- 前往住宿 -->
-                <div class="card card-transport fade-in">
-                    <div class="card-icon">🚗</div>
-                    <div class="card-body">
-                        <h3 class="card-title">前往九寨溝口</h3>
-                        <p class="card-desc">遊覽結束後，乘專車前往九寨溝天源豪生酒店（約10分鐘車程）</p>
-                    </div>
-                </div>
-
-                <!-- 美食推薦 -->
+                <!-- 美食卡片：西湖午餐 -->
                 <div class="card card-food fade-in">
-                    <div class="card-icon">🍜</div>
+                    <div class="card-icon">🍽️</div>
                     <div class="card-body">
-                        <h3 class="card-title">美食建議</h3>
-                        <p class="card-desc">景區附近以團餐為主，建議找一家藏式餐廳品嚐：</p>
+                        <span class="card-time">12:00</span>
+                        <h3 class="card-title">西湖周邊景觀餐廳自理午餐</h3>
+                        <p class="card-desc">在西湖畔特色酒樓享用午餐，推薦品嚐杭州百年名菜「樓外樓」或「知味觀」招牌經典。</p>
                         <div class="food-list">
-                            <span class="food-item">🥩 洋芋糍粑</span>
-                            <span class="food-item">🍵 酥油茶</span>
-                            <span class="food-item">🌮 青稞餅</span>
-                            <span class="food-item">🥣 九寨菌煲</span>
+                            <span class="food-item">東坡肉（肥而不膩）</span>
+                            <span class="food-item">西湖醋魚（評價兩極）</span>
+                            <span class="food-item">龍井蝦仁</span>
+                            <span class="food-item">宋嫂魚羹</span>
+                            <span class="food-item">炸響鈴</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- 住宿卡片 -->
+                <!-- 景點/表演卡片：宋城主題公園與千古情大秀 -->
+                <div class="card card-attraction fade-in">
+                    <div class="card-icon">🎭</div>
+                    <div class="card-body">
+                        <span class="card-time">17:30</span>
+                        <h3 class="card-title">【杭州宋城主題公園】古風體驗・觀賞《宋城千古情》大秀</h3>
+                        <p class="card-desc">
+                            午後專車前往宋城，走進仿宋建築林立的古風繁華市井街區，體驗拋繡球招親、衙門斷案等沉浸式民俗實景互動。重頭戲為入座觀賞<strong>世界三大名秀之一——《宋城千古情》</strong>！運用頂尖聲光電科技、水幕與舞台機關，震撼演繹良渚之光、宋宮宴樂、岳飛抗金到梁祝白蛇千古絕唱，「給我一天，還你千年」！
+                        </p>
+                        <!-- 宋城主題公園與千古情大秀實景照片 -->
+                        <a href="https://zanzan.tw/archives/53054" target="_blank" rel="noopener noreferrer"
+                            class="media-figure">
+                            <img src="Photo/Landmark/宋城.jpg" alt="杭州宋城千古情演出盛況與古風街區" loading="lazy">
+                            <figcaption class="media-caption">🎭 杭州宋城主題公園——世界三大名秀《宋城千古情》，給我一天、還你千年</figcaption>
+                        </a>
+                        <div style="display: flex; flex-direction: column; gap: 0.5rem; margin-top: 0.75rem;">
+                            <a href="https://patienceru.com/blog/post/【-浙江杭州-─-旅遊-】宋城千古情－西湖片區" target="_blank"
+                                rel="noopener noreferrer" class="card-link">
+                                🔗 【浙江杭州 ─ 旅遊】宋城千古情現場震撼紀實與西湖片區導覽
+                            </a>
+                            <a href="https://zanzan.tw/archives/53054" target="_blank" rel="noopener noreferrer"
+                                class="card-link">
+                                🔗 杭州宋城千古情：21個劇場表演與世界3大名秀全方位攻略
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 夜間活動/交通卡片：專車接回或夜市漫遊 -->
+                <div class="card card-transport fade-in">
+                    <div class="card-icon">🌙</div>
+                    <div class="card-body">
+                        <span class="card-time">19:30</span>
+                        <h3 class="card-title">演出結束・專車前往武林夜市，再自行回酒店。</h3>
+                        <p class="card-desc">
+                            千古情精采大秀謝幕後，專車前往著名的【武林夜市】下車，品嚐香酥蔥油餅、叫花雞、生煎包等平民宵夜，搭乘地鐵回酒店(鳳起路站→吳山廣場站，票價2元)，或沿湖畔晚風徐徐散步回飯店(約3公里)。
+                        </p>
+                        <!-- 武林夜市照片 -->
+                        <a href="https://heidihihi.com/wulin-night-market-hangzhou/" target="_blank"
+                            rel="noopener noreferrer" class="media-figure">
+                            <img src="Photo/Landmark/武林夜市.webp" alt="杭州武林夜市熱鬧街景與特色小吃" loading="lazy">
+                            <figcaption class="media-caption">🍢 杭州武林夜市——西湖旁最接地氣的人氣夜市，文創手工與地道宵夜集散地</figcaption>
+                        </a>
+                        <a href="https://heidihihi.com/wulin-night-market-hangzhou/" target="_blank"
+                            rel="noopener noreferrer" class="card-link">
+                            🔗 【杭州景點】武林夜市美食攻略｜西湖旁夜市逛吃喝玩，交通、必吃、周邊夜市一次看！
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 住宿卡片：全季酒店 (杭州吳山廣場店) -->
                 <div class="card card-hotel fade-in">
                     <div class="card-icon">🏨</div>
                     <div class="card-body">
-                        <span class="card-time">3月30日(一)住宿</span>
-                        <h3 class="card-title">九寨溝天源豪生酒店(含早餐)</h3>
-                        <p class="card-desc">連住兩晚</p>
-                        <!-- 圖片連結區塊：寬度自適應，點擊可跳轉至詳細資訊 -->
-                        <a href="https://tw.trip.com/hotels/jiuzhaigou-hotel-detail-994296/howard-johnson-tianyuan-resort"
-                            target="_blank" class="media-figure">
-                            <img src="Photo/Landmark/九寨溝天源豪生酒店.webp" alt="九寨溝天源豪生酒店">
-                            <figcaption class="media-caption">📍 九寨溝天源豪生酒店 - 距離九寨千古情約120公尺</figcaption>
-                        </a>
-                        <a href="https://tw.trip.com/hotels/jiuzhaigou-hotel-detail-994296/howard-johnson-tianyuan-resort"
-                            target="_blank" class="card-link">
-                            � 九寨溝天源豪生酒店trip簡介(含照片與附近景點)
-                        </a>
+                        <span class="card-time">4月3日(六) 續住</span>
+                        <h3 class="card-title">宿：全季酒店 (杭州吳山廣場店)</h3>
+                        <p class="card-desc">連續三晚入住同飯店，免去每天收行李疲累，享受高品質休憩體驗。</p>
                     </div>
                 </div>
 
-                <!-- 景點推薦 -->
-                <div class="card card-attraction fade-in">
-                    <div class="card-icon">🏛️</div>
-                    <div class="card-body">
-                        <h3 class="card-title">推薦景點</h3>
-                        <div class="attraction-list">
-                            <div class="attraction-item"
-                                style="flex-direction: column; align-items: flex-start; gap: 8px;">
-                                <div style="width: 100%;">
-                                    <div class="card-title" style="margin-bottom: 4px;">九寨千古情(距離約120公尺)</div>
-                                    <div class="card-desc" style="white-space: normal;">
-                                        📍阿壩藏族羌族自治州的人氣景點，欣賞原生態歌舞表演</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 當天相簿連結（不隨行程折疊） -->
-            <div class="card card-album fade-in">
-                <div class="card-icon">📸</div>
-                <div class="card-body">
-                    <h3 class="card-title">3月30日 (一) 相簿</h3>
-                    <p class="card-desc">瀏覽今日精彩照片</p>
-                    <a href="https://l101-nas.tailbf5fb.ts.net:8443/share/xaBJUTIuZ1tSWlkascDJoTHbUWV7iPBgbU6s7f-EzANfQHAFS3fx5EQRAPMvb0HVZpc"
-                        target="_blank" class="card-link album-link">
-                        📷 開啟 IMMICH 相簿
-                    </a>
-                </div>
             </div>
         </section>
 
-        <!-- ========== Day 4: 3月31日 九寨溝深度遊 ========== -->
-        <section class="day-section" id="day4" data-date="2026-03-31">
+        <!-- ============================================
+             Day 4: 2027年 4月4日 (日) 杭州塘棲古鎮 ➔ 水鄉周莊 ➔ 蘇州
+             - 08:30 退房攜帶行李，專車出發前往塘棲古鎮
+             - 12:00 塘棲古鎮午餐後出發前往周莊 (車程約1.5~2小時)
+             - 14:00 遊覽「中國第一水鄉」周莊古鎮 (雙橋、沈廳、手搖船)
+             - 20:00 專車前往蘇州市區飯店辦理入住
+             - 宿：全季酒店（蘇州山塘街石路地鐵站店），Trip評分9.6
+        ============================================ -->
+        <section class="day-section" id="day4" data-date="2027-04-04">
             <div class="day-header collapsible-trigger">
                 <div class="day-number">04</div>
                 <div class="day-info">
-                    <span class="day-date">3月31日 (二)</span>
-                    <h2 class="day-title">九寨溝深度遊覽</h2>
-                    <p class="day-highlight">長海・五彩池・諾日朗瀑布・樹正群海</p>
+                    <span class="day-date">4月4日 (日)</span>
+                    <h2 class="day-title">塘棲運河古鎮 ➔ 水鄉周莊 ➔ 蘇州</h2>
+                    <p class="day-highlight">京杭大運河廣濟橋・塘棲老字號茶點伴手禮・「中國第一水鄉」周莊古鎮手搖船・宿蘇州石路商圈全季酒店</p>
                 </div>
                 <div class="collapse-icon">▼</div>
             </div>
 
-            <!-- 今日攻略圖（不隨行程折疊） -->
-            <div class="card fade-in" style="padding: 0; overflow: hidden;">
-                <img src="Photo/Itinerary/2026-03-31-3.png" alt="3月31日 行程攻略圖"
-                    style="width: 100%; height: auto; border-radius: 12px; display: block;">
-            </div>
-            <a href="https://www.nmc.cn/publish/forecast/ASC/jiuzhaigou.html" target="_blank" class="card-link">
-                ⛅ 九寨溝天氣預報
+            <a href="https://www.nmc.cn/publish/forecast/AJS/suzhou.html" target="_blank" rel="noopener noreferrer"
+                class="card-link" style="margin-bottom: 1rem; display: inline-flex;">
+                ⛅ 蘇州即時天氣預報
             </a>
 
             <div class="day-content">
-                <!-- 今日攻略圖 -->
-                <div class="card fade-in" style="padding: 0; overflow: hidden;">
-                    <img src="Photo/Itinerary/2026-03-31-2.png" alt="3月31日 行程攻略圖"
-                        style="width: 100%; height: auto; border-radius: 12px; display: block;">
-                </div>
 
-                <!-- 早餐 -->
-                <div class="card card-info fade-in">
-                    <div class="card-icon">🍳</div>
+                <!-- 景點卡片：塘棲古鎮 -->
+                <div class="card card-attraction fade-in">
+                    <div class="card-icon">🌉</div>
                     <div class="card-body">
-                        <span class="card-time">07:00-08:00</span>
-                        <h3 class="card-title">酒店早餐</h3>
-                    </div>
-                </div>
-
-                <!-- 出發 -->
-                <div class="card card-transport fade-in">
-                    <div class="card-icon">🚗</div>
-                    <div class="card-body">
-                        <span class="card-time">08:00-08:30</span>
-                        <h3 class="card-title">前往九寨溝景區</h3>
-                    </div>
-                </div>
-
-                <!-- 九寨溝遊覽 -->
-                <div class="card card-attraction card-featured fade-in">
-                    <div class="card-icon">🏞️</div>
-                    <div class="card-body">
-                        <span class="card-time">08:30-17:00</span>
-                        <h3 class="card-title">九寨溝深度遊覽</h3>
-                        <p class="card-subtitle">一日遊覽路線建議</p>
-                        <div class="route-suggestion">
-                            <p>🎯 乘車先到頂部，再由上往下遊覽：</p>
-                            <div class="route-items">
-                                <span class="route-item">1️⃣ 長海</span>
-                                <span class="route-arrow">→</span>
-                                <span class="route-item">2️⃣ 五彩池</span>
-                                <span class="route-arrow">→</span>
-                                <span class="route-item">3️⃣ 諾日朗瀑布</span>
-                                <span class="route-arrow">→</span>
-                                <span class="route-item">4️⃣ 樹正群海</span>
-                            </div>
-
-                            <!-- 圖片連結區塊：寬度自適應，點擊可跳轉至詳細攻略 -->
-                            <a href="https://zhuanlan.zhihu.com/p/718782854" target="_blank" class="media-figure">
-                                <img src="Photo/Landmark/九寨溝最全攻略.jpg" alt="九寨溝最全攻略">
-                                <figcaption class="media-caption">📍 九寨溝最全攻略</figcaption>
-                            </a>
-                            <a href="https://zhuanlan.zhihu.com/p/718782854" target="_blank" class="media-figure">
-                                <img src="Photo/Landmark/九寨溝觀光車建議.jpg" alt="九寨溝觀光車建議">
-                                <figcaption class="media-caption">📍 九寨溝觀光車建議</figcaption>
-                            </a>
-
-
+                        <span class="card-time">08:30</span>
+                        <h3 class="card-title">辦理退房・專車前往京杭大運河【塘棲古鎮】</h3>
+                        <p class="card-desc">
+                            辦理退房手續並將行李安置於旅遊專車上，專車出發前往運河名鎮——<strong>塘棲古鎮</strong>。塘棲是京杭大運河進入杭州的門戶，漫步遊覽大運河上唯一的七孔石拱長橋<strong>【廣濟橋】</strong>、乾隆禦碑、郭璞井及運河穀倉博物館。
+                        </p>
+                        <!-- 塘棲古鎮實景照片 -->
+                        <a href="https://patienceru.com/blog/post/【-浙江杭州-─-旅遊-】塘栖古鎮" target="_blank"
+                            rel="noopener noreferrer" class="media-figure">
+                            <img src="Photo/Landmark/塘栖古鎮.jpg" alt="塘棲古鎮京杭大運河廣濟橋" loading="lazy">
+                            <figcaption class="media-caption">📷 塘棲古鎮——京杭大運河上的明珠，七孔石拱廣濟橋與運河水鄉歷史印記</figcaption>
+                        </a>
+                        <div class="food-category" style="margin-top: 0.75rem;">
+                            <h4>🏷️ 老杭州人專程前來採買的老字號名產：</h4>
+                            <p>法根糕點鋪與朱一堂的傳統綠豆糕、立夏餅、匯昌粽、粢毛肉圓、細沙羊尾、塘棲板鴨，皆是遠近馳名的百年手藝。</p>
                         </div>
+                        <a href="https://patienceru.com/blog/post/【-浙江杭州-─-旅遊-】塘栖古鎮" target="_blank"
+                            rel="noopener noreferrer" class="card-link" style="margin-top: 0.75rem;">
+                            🔗 【浙江杭州 ─ 旅遊】塘棲古鎮水鄉風貌與運河風情圖文遊記
+                        </a>
                     </div>
                 </div>
 
-                <!-- 住宿卡片 -->
+                <!-- 交通卡片：自理午餐後前往周莊 -->
+                <div class="card card-transport fade-in">
+                    <div class="card-icon">🚌</div>
+                    <div class="card-body">
+                        <span class="card-time">12:00</span>
+                        <h3 class="card-title">塘棲古鎮午餐・啟程前往【周莊古鎮】</h3>
+                        <p class="card-desc">於塘棲古鎮水岸自理享用美味午餐後，全員搭乘專屬中巴啟程前往「中國第一水鄉」周莊古鎮，車程約 1.5 至 2 小時，沿途可稍作小憩。</p>
+                    </div>
+                </div>
+
+                <!-- 景點卡片：周莊古鎮 -->
+                <div class="card card-attraction fade-in">
+                    <div class="card-icon">🛶</div>
+                    <div class="card-body">
+                        <span class="card-time">14:00</span>
+                        <h3 class="card-title">遊覽「中國第一水鄉」【周莊古鎮】</h3>
+                        <p class="card-desc">
+                            踏入聞名海內外的江南第一水鄉——<strong>周莊</strong>。走訪著名旅美畫家陳逸飛筆下的靈感地<strong>【雙橋】</strong>（世德橋與永安橋）、江南首富沈萬三後人建造的<strong>【沈廳】</strong>（松茂堂七進豪宅）與明代官宦巨宅<strong>【張廳】</strong>。也可以自費體驗<strong>水巷手搖船</strong>，伴隨船娘悠揚的江南小調，穿行於小橋、流水、人家之間，感受濃郁姑蘇水鄉神韻。
+                        </p>
+                        <!-- 周莊水鄉美景與導覽地圖照片 -->
+                        <a href="https://travelclub.blog/31349" target="_blank" rel="noopener noreferrer"
+                            class="media-figure">
+                            <img src="Photo/Landmark/周莊.webp" alt="「中國第一水鄉」周莊古鎮水巷手搖船" loading="lazy">
+                            <figcaption class="media-caption">🛶 中國第一水鄉周莊——小橋流水人家，搖櫓船掠過古宅深巷之詩意江南</figcaption>
+                        </a>
+                        <figure class="media-figure">
+                            <img src="Photo/Landmark/周莊必看景點.jpg" alt="周莊古鎮必看核心景點導覽" loading="lazy">
+                            <figcaption class="media-caption">📸 周莊必看精華景點——雙橋（鑰匙橋）、沈廳富安橋、張廳江南名宅集錦</figcaption>
+                        </figure>
+                        <figure class="media-figure">
+                            <img src="Photo/Landmark/周莊景點地圖.jpg" alt="周莊古鎮景點分佈地圖與步行路線" loading="lazy">
+                            <figcaption class="media-caption">🗺️ 周莊景區全域手繪地圖——水路與陸路遊覽動線指南</figcaption>
+                        </figure>
+                        <a href="https://travelclub.blog/31349" target="_blank" rel="noopener noreferrer"
+                            class="card-link" style="margin-top: 0.75rem;">
+                            🔗 【周莊古鎮自由行】水鄉避開人潮玩法、雙橋沈廳必訪攻略
+                        </a>
+                        <a href="https://zanzan.tw/archives/55940" target="_blank" rel="noopener noreferrer"
+                            class="card-link" style="margin-top: 0.75rem;">
+                            🔗 周莊古鎮攻略：比烏鎮更有歷史的中國第1水鄉
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 交通卡片：前往蘇州市區 -->
+                <div class="card card-transport fade-in">
+                    <div class="card-icon">🚐</div>
+                    <div class="card-body">
+                        <span class="card-time">20:00</span>
+                        <h3 class="card-title">專車接送前往蘇州市區飯店辦理入住</h3>
+                        <p class="card-desc">告別周莊依依水影，專車平穩送抵蘇州市區石路精華商圈飯店辦理入住手續，卸下行囊放鬆身心。</p>
+                    </div>
+                </div>
+
+                <!-- 住宿卡片：全季酒店（蘇州山塘街石路地鐵站店） -->
                 <div class="card card-hotel fade-in">
                     <div class="card-icon">🏨</div>
                     <div class="card-body">
-                        <span class="card-time">3月31日(二)住宿</span>
-                        <h3 class="card-title">九寨溝天源豪生酒店(含早餐)</h3>
-                        <p class="card-desc">連住兩晚</p>
-                        <!-- 圖片連結區塊：寬度自適應，點擊可跳轉至詳細資訊 -->
-                        <a href="https://tw.trip.com/hotels/jiuzhaigou-hotel-detail-994296/howard-johnson-tianyuan-resort"
-                            target="_blank" class="media-figure">
-                            <img src="Photo/Landmark/九寨溝天源豪生酒店.webp" alt="九寨溝天源豪生酒店">
-                            <figcaption class="media-caption">📍 九寨溝天源豪生酒店 - 距離九寨千古情約120公尺</figcaption>
-                        </a>
-                        <a href="https://tw.trip.com/hotels/jiuzhaigou-hotel-detail-994296/howard-johnson-tianyuan-resort"
-                            target="_blank" class="card-link">
-                            � 九寨溝天源豪生酒店trip簡介(含照片與附近景點)
-                        </a>
-                    </div>
-                </div>
-
-                <!-- 晚間活動 -->
-                <div class="card card-night fade-in expandable" data-expanded="false">
-                    <div class="card-header-expandable">
-                        <div class="card-icon">🎭</div>
-                        <div class="card-body">
-                            <h3 class="card-title">晚間活動</h3>
-                            <span class="card-time">18:00-19:00</span>
-                            <p class="card-desc">自費選項：九寨千古情演出</p>
-
-                            <!-- 九寨千古情演出影片 -->
-                            <figure class="media-figure">
-                                <video width="100%" style="aspect-ratio: 9 / 16;" controls preload="metadata"
-                                    poster="Photo/Landmark/九寨千古情.jpg">
-                                    <source src="Photo/Landmark/九寨千古情.mp4" type="video/mp4">
-                                    您的瀏覽器不支援影片播放。
-                                </video>
-                                <figcaption class="media-caption">🎬 九寨千古情</figcaption>
-                            </figure>
+                        <span class="card-time">4月4日(日) 入住</span>
+                        <h3 class="card-title">全季酒店 (蘇州山塘街石路地鐵站店)</h3>
+                        <p class="card-desc"><strong>Trip.com 評分高達 9.6 分！</strong>
+                            坐落於蘇州繁華的石路商圈核心，距離地鐵站近在咫尺，更鄰近神州第一古街「山塘街」。</p>
+                        <div class="food-category" style="margin-top: 0.5rem;">
+                            <h4>🍲 飯店周邊蘇式宵夜晚餐推薦：</h4>
+                            <p>飯店周邊步行即可到達石路步行街與山塘街，推薦品嚐<strong>「啞巴生煎」</strong>（底脆爆汁、肉餡鮮甜）、正宗蘇式細麵（燜肉麵、蝦仁爆鱔麵）與鮮肉月餅。</p>
                         </div>
-                        <div class="expand-icon">▼</div>
-                    </div>
-                    <div class="card-expand-content">
-                        <div class="show-info">
-                            <h4>🎪 九寨千古情演出</h4>
-                            <p>大型原生態歌舞劇，展現藏羌文化精髓</p>
-                            <span class="optional-tag">💰 自費項目</span>
-                        </div>
+                        <a href="https://tw.trip.com/hotels/suzhou-hotel-detail-85396444/ji-hotel/" target="_blank"
+                            rel="noopener noreferrer" class="card-link" style="margin-top: 0.75rem;">
+                            📍 開啟 Trip.com 查看蘇州全季酒店實景設施與顧客評價
+                        </a>
                     </div>
                 </div>
-            </div>
 
-            <!-- 當天相簿連結（不隨行程折疊） -->
-            <div class="card card-album fade-in">
-                <div class="card-icon">📸</div>
-                <div class="card-body">
-                    <h3 class="card-title">3月31日 (二) 相簿</h3>
-                    <p class="card-desc">瀏覽今日精彩照片</p>
-                    <a href="https://l101-nas.tailbf5fb.ts.net:8443/share/pOcxCci0NzoMwXC9AdkQ_vPNu6x6mL7_bdewMx2-jp4MHPxendkbWv-KukwncPtyIEo"
-                        target="_blank" class="card-link album-link">
-                        📷 開啟 IMMICH 相簿
-                    </a>
-                </div>
             </div>
         </section>
 
-        <!-- ========== Day 5: 4月1日 九寨溝 → 成都 ========== -->
-        <section class="day-section" id="day5" data-date="2026-04-01">
+        <!-- ============================================
+             Day 5: 2027年 4月5日 (一) 蘇州古典園林巡禮 ➔ 古街夜韻
+             - 08:30 專車接送參觀中國名園之首拙政園、獅子林
+             - 12:00 平江路/觀前街自理午餐、採買蘇州名產伴手禮
+             - 13:30 吳中第一名勝虎丘山風景區 (雲巖寺斜塔、劍池)
+             - 17:30 七里山塘街漫步、夜遊水巷手搖船
+             - 20:00 回飯店休息
+             - 宿：全季酒店（蘇州山塘街石路地鐵站店）
+        ============================================ -->
+        <section class="day-section" id="day5" data-date="2027-04-05">
             <div class="day-header collapsible-trigger">
                 <div class="day-number">05</div>
                 <div class="day-info">
-                    <span class="day-date">4月1日 (三)</span>
-                    <h2 class="day-title">返回成都 - 歷史文化遊</h2>
-                    <p class="day-highlight">武侯祠・錦里・寬窄巷子</p>
+                    <span class="day-date">4月5日 (一)</span>
+                    <h2 class="day-title">蘇州古典園林巡禮 ➔ 古街夜韻</h2>
+                    <p class="day-highlight">中國四大名園之首拙政園・假山迷宮獅子林・平江路古街采風伴手禮・吳中第一名勝虎丘斜塔・七里山塘夜遊手搖船</p>
                 </div>
                 <div class="collapse-icon">▼</div>
             </div>
 
-            <!-- 今日攻略圖（不隨行程折疊） -->
-            <div class="card fade-in" style="padding: 0; overflow: hidden;">
-                <img src="Photo/Itinerary/2026-04-01-1.png" alt="4月1日 行程攻略圖"
-                    style="width: 100%; height: auto; border-radius: 12px; display: block;">
-            </div>
-            <a href="https://www.nmc.cn/publish/forecast/ASC/chengdu.html" target="_blank" class="card-link">
-                ⛅ 成都天氣預報
+            <a href="https://www.nmc.cn/publish/forecast/AJS/suzhou.html" target="_blank" rel="noopener noreferrer"
+                class="card-link" style="margin-bottom: 1rem; display: inline-flex;">
+                ⛅ 蘇州即時天氣預報
             </a>
 
             <div class="day-content">
-                <!-- 今日攻略圖 -->
-                <div class="card fade-in" style="padding: 0; overflow: hidden;">
-                    <img src="Photo/Itinerary/2026-04-01-2.png" alt="4月1日 行程攻略圖"
-                        style="width: 100%; height: auto; border-radius: 12px; display: block;">
-                </div>
 
-                <!-- 早餐 -->
-                <div class="card card-info fade-in">
-                    <div class="card-icon">🍳</div>
-                    <div class="card-body">
-                        <span class="card-time">07:00-08:00</span>
-                        <h3 class="card-title">酒店早餐</h3>
-                    </div>
-                </div>
-
-                <!-- 前往高鐵站 -->
-                <div class="card card-transport fade-in">
-                    <div class="card-icon">🚗</div>
-                    <div class="card-body">
-                        <span class="card-time">09:00-11:30</span>
-                        <h3 class="card-title">乘車前往黃龍九寨高鐵站</h3>
-                    </div>
-                </div>
-
-                <!-- 高鐵 -->
-                <div class="card card-train fade-in">
-                    <div class="train-header">
-                        <span class="train-number">🚄 動車C5764</span>
-                    </div>
-                    <div class="flight-route">
-                        <div class="flight-city">
-                            <span class="flight-time">12:10</span>
-                            <span class="flight-name">黃龍九寨站</span>
-                        </div>
-                        <div class="flight-line">
-                            <span class="flight-icon">→</span>
-                            <span class="duration">約2小時</span>
-                        </div>
-                        <div class="flight-city">
-                            <span class="flight-time">14:17</span>
-                            <span class="flight-name">成都東站</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 高鐵動車座位圖 -->
-                <div class="card fade-in" style="padding: 0; overflow: hidden;">
-                    <img src="Photo/Itinerary/高鐵動車座位表.png" alt="高鐵動車座位表"
-                        style="width: 100%; height: auto; border-radius: 12px; display: block;">
-                </div>
-
-                <!-- 成都景點 -->
+                <!-- 景點卡片：拙政園與獅子林 -->
                 <div class="card card-attraction fade-in">
-                    <div class="card-icon">🏛️</div>
+                    <div class="card-icon">🎍</div>
                     <div class="card-body">
-                        <h3 class="card-title">成都歷史文化遊</h3>
-                        <div class="attraction-grid">
-                            <div class="attraction-card">
-                                <span class="attraction-num">1</span>
-                                <a href="https://www.google.com/maps/search/成都武侯祠" target="_blank"
-                                    class="attraction-name link">武侯祠</a>
-                                <p>瞭解三國歷史遺跡，體驗三國文化</p>
-                            </div>
-                            <div class="attraction-card">
-                                <span class="attraction-num">2</span>
-                                <a href="https://www.google.com/maps/search/成都錦里" target="_blank"
-                                    class="attraction-name link">錦里一條街</a>
-                                <p>遊覽明清古街，感受川西民俗</p>
-                            </div>
-                            <div class="attraction-card">
-                                <span class="attraction-num">3-1</span>
-                                <a href="https://www.google.com/maps/search/成都寬窄巷子" target="_blank"
-                                    class="attraction-name link">寬窄巷子</a>
-                                <p>體驗老成都的「慢生活」</p>
-                            </div>
-                            <div class="attraction-card">
-                                <span class="attraction-num">3-2</span>
-                                <a href="https://www.google.com/maps/search/成都琴台路" target="_blank"
-                                    class="attraction-name link">琴台路</a>
-                                <p>仿古街道，以珠寶和美食為主</p>
-                            </div>
+                        <span class="card-time">08:30</span>
+                        <h3 class="card-title">專車接送・世界文化遺產【拙政園】與【獅子林】</h3>
+                        <p class="card-desc">
+                            酒店享用早餐後，專車出發深度探訪中國四大名園之首——<strong>拙政園</strong>。以水為中心，山水縈繞、廳榭精緻，移步換景，展現明代文人園林的巔峰美學（務必要聽導覽講解以領悟佈景巧思）。隨後順遊步行即可抵達的<strong>獅子林</strong>，參觀貝聿銘叔祖家族擁有的名園，穿梭於如奇幻迷宮般的太湖石假山群中，妙趣橫生。
+                        </p>
+                        <!-- 拙政園與獅子林名園照片 -->
+                        <a href="https://heidihihi.com/classical-garden-suzhou/" target="_blank"
+                            rel="noopener noreferrer" class="media-figure">
+                            <img src="Photo/Landmark/拙政園.jpg" alt="中國四大名園之首蘇州拙政園" loading="lazy">
+                            <figcaption class="media-caption">🎍 蘇州拙政園——中國四大名園之首、世界文化遺產，借景涵青移步換景造園極致</figcaption>
+                        </a>
+                        <a href="https://www.davidwin.net/?p=74901" target="_blank" rel="noopener noreferrer"
+                            class="media-figure">
+                            <img src="Photo/Landmark/獅子林.webp" alt="蘇州獅子林假山王國" loading="lazy">
+                            <figcaption class="media-caption">🪨 蘇州獅子林——貝聿銘叔祖名園，以奇峰怪石組成的太湖石假山迷宮著稱</figcaption>
+                        </a>
+                        <div style="display: flex; flex-direction: column; gap: 0.5rem; margin-top: 0.75rem;">
+                            <a href="https://heidihihi.com/classical-garden-suzhou/" target="_blank"
+                                rel="noopener noreferrer" class="card-link">
+                                🔗 蘇州必去景點【拙政園】保母級攻略介紹（講解重點與拍照位）
+                            </a>
+                            <a href="https://www.davidwin.net/?p=74901" target="_blank" rel="noopener noreferrer"
+                                class="card-link">
+                                🔗 【蘇州景點】四大名園之一，貝聿銘家族名園：獅子林假山王國
+                            </a>
+                            <a href="https://hicoyhuang.blogspot.com/2017/05/blog-post.html" target="_blank"
+                                rel="noopener noreferrer" class="card-link">
+                                🔗 蘇州一日遊：觀前街、拙政園與獅子林完整路線圖文
+                            </a>
                         </div>
                     </div>
                 </div>
 
-                <!-- 美食推薦 -->
+                <!-- 美食/購物卡片：平江路采風與午餐 -->
                 <div class="card card-food fade-in">
-                    <div class="card-icon">🍜</div>
+                    <div class="card-icon">🥢</div>
                     <div class="card-body">
-                        <h3 class="card-title">美食建議</h3>
-                        <div class="food-category">
-                            <h4>📍 錦里</h4>
-                            <p>美食小吃匯集地</p>
+                        <span class="card-time">12:00</span>
+                        <h3 class="card-title">【平江路歷史文化街區】道地蘇幫菜午餐＆名產伴手禮採買</h3>
+                        <p class="card-desc">漫步於保留「水陸並行、河街相鄰」雙棋盤格局的平江路與觀前街商圈。自理午餐享用最道地的經典蘇幫菜餚，並在百年老店挑選道地伴手禮。</p>
+                        <div class="food-category" style="margin-top: 0.5rem;">
+                            <h4>🐟 蘇幫菜必點美味：</h4>
                             <div class="food-list">
-                                <span class="food-item">🍡 三大炮</span>
-                                <span class="food-item">🌶️ 傷心涼粉</span>
-                                <span class="food-item">🥩 張飛牛肉</span>
-                                <span class="food-item">🥟 葷素抄手</span>
+                                <span class="food-item">松鼠鱖魚（酸甜酥脆）</span>
+                                <span class="food-item">響油鱔糊</span>
+                                <span class="food-item">蘇式湯麵（楓鎮大麵）</span>
+                                <span class="food-item">蟹黃湯包</span>
+                                <span class="food-item">雞頭米甜湯 / 糖粥</span>
                             </div>
                         </div>
-                        <div class="food-category">
-                            <h4>📍 寬窄巷子/琴台路</h4>
-                            <p>可找一家茶館體驗蓋碗茶和川劇變臉表演</p>
-                            <div class="food-list">
-                                <span class="food-item">🍵 蓋碗茶</span>
-                                <span class="food-item">🐰 麻辣兔頭</span>
-                            </div>
+                        <div class="food-category" style="margin-top: 0.5rem;">
+                            <h4>🎁 蘇州精選名特伴手禮：</h4>
+                            <p><strong>採芝齋</strong>（蘇式糖果酥點、貝母糖）、<strong>宋錦絲綢製品</strong>、春季現採<strong>正宗洞庭碧螺春綠茶</strong>。
+                            </p>
                         </div>
                     </div>
                 </div>
 
-                <!-- 住宿卡片 -->
+                <!-- 景點卡片：虎丘風景區 -->
+                <div class="card card-attraction fade-in">
+                    <div class="card-icon">🗼</div>
+                    <div class="card-body">
+                        <span class="card-time">13:30</span>
+                        <h3 class="card-title">遊覽「吳中第一名勝」【虎丘山風景區】（中國比薩斜塔）</h3>
+                        <p class="card-desc">
+                            午後前往大文豪蘇東坡盛讚「到蘇州不遊虎丘，乃憾事也」的<strong>虎丘山風景區</strong>。近距離瞻仰世界著名的千載斜塔——<strong>雲岩寺塔</strong>（建於北宋，塔身傾斜近
+                            4 度，被譽為中國的比薩斜塔），探訪闔閭墓傳說之<strong>「劍池」</strong>、千人石與憨憨泉，登高俯瞰姑蘇古城風光，體會古木參天與深厚歷史底蘊。</p>
+                        <!-- 虎丘山雲岩寺塔與劍池實景照片 -->
+                        <a href="https://heidihihi.com/tigerhill-suzhou/" target="_blank" rel="noopener noreferrer"
+                            class="media-figure">
+                            <img src="Photo/Landmark/虎丘.jpeg" alt="蘇州虎丘山雲岩寺塔（中國比薩斜塔）" loading="lazy">
+                            <figcaption class="media-caption">🗼 虎丘山風景區——吳中第一名勝，千年雲岩寺斜塔巍峨聳立</figcaption>
+                        </a>
+                        <figure class="media-figure">
+                            <img src="Photo/Landmark/虎丘-1.jpeg" alt="虎丘風景區古木參天與劍池古蹟" loading="lazy">
+                            <figcaption class="media-caption">🗡️ 虎丘劍池與名勝古蹟——吳王闔閭墓之千載傳奇，古柏參天幽深靜謐</figcaption>
+                        </figure>
+                        <div style="display: flex; flex-direction: column; gap: 0.5rem; margin-top: 0.75rem;">
+                            <a href="https://www.davidwin.net/?p=60277" target="_blank" rel="noopener noreferrer"
+                                class="card-link">
+                                🔗 【蘇州景點】吳中第一名勝，中國比薩斜塔：虎丘景區深度歷史
+                            </a>
+                            <a href="https://heidihihi.com/tigerhill-suzhou/" target="_blank" rel="noopener noreferrer"
+                                class="card-link">
+                                🔗 蘇州必去景點｜中國比薩斜塔「虎丘」雲巖寺塔、劍池、千人石完整攻略
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 夜間活動/手搖船卡片：七里山塘街夜遊 -->
+                <div class="card card-night fade-in">
+                    <div class="card-icon">🏮</div>
+                    <div class="card-body">
+                        <span class="card-time">17:30</span>
+                        <h3 class="card-title">漫步【七里山塘街】・搭乘平底手搖船夜遊賞水巷紅燈籠</h3>
+                        <p class="card-desc">
+                            黃昏時分造訪由唐代大詩人白居易主持開鑿修築的「神州第一古街」——<strong>山塘街</strong>。漫步於古石橋與老字號店鋪之間，品嚐蘇式小吃生煎包與梅花糕。入夜後特別安排<strong>搭乘平底手搖木船夜遊山塘河</strong>，欣賞河道兩岸紅燈籠倒映水波的如夢似幻姑蘇夜景，在微風中聆聽評彈悠揚樂聲。
+                        </p>
+                        <!-- 七里山塘夜景實景照片 -->
+                        <a href="https://today.line.me/tw/v3/article/RBVZnzz" target="_blank" rel="noopener noreferrer"
+                            class="media-figure">
+                            <img src="Photo/Landmark/七里山塘.jpg" alt="蘇州七里山塘街紅燈籠夜景與手搖船" loading="lazy">
+                            <figcaption class="media-caption">🏮 神州第一古街「七里山塘」——沿河紅燈籠倒映水波，乘手搖畫舫夜遊夢幻姑蘇</figcaption>
+                        </a>
+                        <div style="display: flex; flex-direction: column; gap: 0.5rem; margin-top: 0.75rem;">
+                            <a href="https://today.line.me/tw/v3/article/RBVZnzz" target="_blank"
+                                rel="noopener noreferrer" class="card-link">
+                                🔗 蘇州七里山塘深度攻略：夜遊、評彈、美食，帶你玩轉姑蘇第一街！
+                            </a>
+                            <a href="https://www.davidwin.net/?p=61820" target="_blank" rel="noopener noreferrer"
+                                class="card-link">
+                                🔗 【蘇州景點】神州第一古街：蘇州山塘街與白公祠歷史風華
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 住宿卡片：全季酒店（蘇州山塘街石路地鐵站店） -->
                 <div class="card card-hotel fade-in">
                     <div class="card-icon">🏨</div>
                     <div class="card-body">
-                        <span class="card-time">4月1日(三)住宿</span>
-                        <h3 class="card-title">成都太古里河畔亞朵飯店(含早餐)</h3>
-                        <p class="card-desc">成都成華區望平濱河路8號</p>
-                        <!-- 圖片連結區塊：寬度自適應，點擊可跳轉至詳細資訊 -->
-                        <a href="https://tw.trip.com/hotels/chengdu-hotel-detail-9149737/atour-hotel-chengdu-tai-koo-li"
-                            target="_blank" style="width: 100%; display: block; margin: 4px 0;">
-                            <img src="Photo/Landmark/成都太古里河畔亞朵飯店.webp" alt="成都太古里河畔亞朵飯店"
-                                style="width: 100%; height: auto; border-radius: 8px; object-fit: cover;">
-                            <figcaption class="media-caption">📍 成都太古里河畔亞朵飯店</figcaption>
-                        </a>
-                        <a href="https://tw.trip.com/hotels/chengdu-hotel-detail-9149737/atour-hotel-chengdu-tai-koo-li"
-                            target="_blank" class="card-link">
-                            成都太古里河畔亞朵飯店trip簡介(含照片與附近景點)
-                        </a>
+                        <span class="card-time">4月5日(一) 續住</span>
+                        <h3 class="card-title">20:00 返回飯店休息・宿：全季酒店（蘇州山塘街石路地鐵站店）</h3>
+                        <p class="card-desc">夜遊結束後步行或短途車程即可返回全季酒店休息，整理滿載的伴手禮與美好回憶。</p>
                     </div>
                 </div>
 
-                <!-- 景點推薦 -->
-                <div class="card card-attraction fade-in">
-                    <div class="card-icon">🏛️</div>
-                    <div class="card-body">
-                        <h3 class="card-title">推薦景點</h3>
-                        <div class="attraction-list">
-                            <div class="attraction-item"
-                                style="flex-direction: column; align-items: flex-start; gap: 8px;">
-                                <div style="width: 100%;">
-                                    <div class="card-title" style="margin-bottom: 4px;">成都香香巷(距離約100公尺)</div>
-                                    <div class="card-desc" style="white-space: normal;">
-                                        隱藏在小巷中的美食天堂，匯集各地特色小吃</div>
-
-                                    <!-- 圖片連結區塊：寬度自適應，點擊可跳轉至詳細攻略 -->
-                                    <a href="https://e.thecover.cn/wapepaper/html/20240903/217937.html" target="_blank"
-                                        class="media-figure">
-                                        <img src="Photo/Landmark/成都香香巷.jpg" alt="成都香香巷">
-                                    </a>
-                                    <a href="https://e.thecover.cn/wapepaper/html/20240903/217937.html" target="_blank"
-                                        class="media-figure">
-                                        <img src="Photo/Landmark/成都香香巷-1.jpg" alt="成都香香巷">
-                                        <figcaption class="media-caption">成都香香巷</figcaption>
-                                    </a>
-                                </div>
-                                <a href="https://e.thecover.cn/wapepaper/html/20240903/217937.html" target="_blank"
-                                    class="card-link">
-                                    📍 “香香巷”里享饕餮 成都“有味道的街巷”真不少
-                                </a>
-                            </div>
-
-                            <div class="attraction-item"
-                                style="flex-direction: column; align-items: flex-start; gap: 8px;">
-                                <div style="width: 100%;">
-                                    <div class="card-title" style="margin-bottom: 4px;">大慈寺(距離約580公尺)</div>
-                                    <div class="card-desc" style="white-space: normal;">
-                                        始建於魏晉時期的千年古剎，唐代高僧玄奘曾在此受戒</div>
-                                </div>
-                                <!-- 圖片連結區塊：寬度自適應，點擊可跳轉至詳細攻略 -->
-                                <a href="https://blog.udn.com/leica88/131787565" target="_blank" class="media-figure">
-                                    <img src="Photo/Landmark/成都大慈寺.jpg" alt="成都大慈寺">
-                                    <figcaption class="media-caption">成都大慈寺 - 千年古刹，玄奘受戒處</figcaption>
-                                </a>
-
-                                <!-- 文字連結 -->
-                                <a href="https://blog.udn.com/leica88/131787565" target="_blank" class="card-link">
-                                    📍 成都大慈寺
-                                </a>
-                            </div>
-
-                            <div class="attraction-item"
-                                style="flex-direction: column; align-items: flex-start; gap: 8px;">
-                                <div style="width: 100%;">
-                                    <div class="card-title" style="margin-bottom: 4px;">成都夜遊錦江（東門碼頭）(距離約600公尺)</div>
-                                    <div class="card-desc" style="white-space: normal;">
-                                        搭乘畫舫夜遊錦江，欣賞成都夜景</div>
-                                </div>
-                                <!-- 圖片連結區塊：寬度自適應，點擊可跳轉至詳細攻略 -->
-                                <a href="https://activity.eztravel.com.tw/detail/TKNKL-136975" target="_blank"
-                                    class="media-figure">
-                                    <img src="Photo/Landmark/成都夜遊錦江-1.jpg" alt="成都夜遊錦江">
-                                </a>
-                                <a href="https://activity.eztravel.com.tw/detail/TKNKL-136975" target="_blank"
-                                    class="media-figure">
-                                    <img src="Photo/Landmark/成都夜遊錦江-2.jpg" alt="成都夜遊錦江">
-                                </a>
-                                <a href="https://activity.eztravel.com.tw/detail/TKNKL-136975" target="_blank"
-                                    class="media-figure">
-                                    <img src="Photo/Landmark/成都夜遊錦江-3.jpg" alt="成都夜遊錦江">
-                                    <figcaption class="media-caption">搭乘畫舫夜遊錦江，欣賞成都夜景</figcaption>
-                                </a>
-
-                                <!-- 文字連結 -->
-                                <a href="https://activity.eztravel.com.tw/detail/TKNKL-136975" target="_blank"
-                                    class="card-link">
-                                    📍 錦江遊船-精選成都必打卡夜遊點，乘船遊覽成都絕美夜景名片
-                                </a>
-                            </div>
-
-                            <div class="attraction-item"
-                                style="flex-direction: column; align-items: flex-start; gap: 8px;">
-                                <div style="width: 100%;">
-                                    <div class="card-title" style="margin-bottom: 4px;">春熙路(距離約820公尺)</div>
-                                    <div class="card-desc" style="white-space: normal;">
-                                        成都最繁華的商業步行街</div>
-                                </div>
-
-                                <!-- 圖片連結區塊：寬度自適應，點擊可跳轉至詳細攻略 -->
-                                <a href="https://andyventure.com/china-sichuan-chengdu-chunxi-road/" target="_blank"
-                                    class="media-figure">
-                                    <img src="Photo/Landmark/成都太古里春熙路地圖.webp" alt="成都太古里春熙路地圖">
-                                    <figcaption class="media-caption">春熙路商圈導覽圖 - 包含各大商場與景點位置</figcaption>
-                                </a>
-
-                                <!-- 文字連結 -->
-                                <a href="https://andyventure.com/china-sichuan-chengdu-chunxi-road/" target="_blank"
-                                    class="card-link">
-                                    📍 春熙路步行街遊記
-                                </a>
-                            </div>
-
-                            <div class="attraction-item"
-                                style="flex-direction: column; align-items: flex-start; gap: 8px;">
-                                <div style="width: 100%;">
-                                    <div class="card-title" style="margin-bottom: 4px;">安順廊橋(距離約1.4公里)</div>
-                                    <div class="card-desc" style="white-space: normal;">
-                                        橫跨府南河的古典廊橋，夜景尤為壯觀</div>
-                                </div>
-                                <!-- 圖片連結區塊：寬度自適應，點擊可跳轉至詳細攻略 -->
-                                <a href="https://hk.trip.com/moments/detail/chengdu-104-128283800/" target="_blank"
-                                    class="media-figure">
-                                    <img src="Photo/Landmark/安順廊橋.webp" alt="安順廊橋">
-                                    <figcaption class="media-caption">安順廊橋</figcaption>
-                                </a>
-                                <a href="https://hk.trip.com/moments/detail/chengdu-104-128283800/" target="_blank"
-                                    class="media-figure">
-                                    <img src="Photo/Landmark/安順廊橋.jpg" alt="安順廊橋">
-                                    <figcaption class="media-caption">安順廊橋</figcaption>
-                                </a>
-
-                                <!-- 文字連結 -->
-                                <a href="https://hk.trip.com/moments/detail/chengdu-104-128283800/" target="_blank"
-                                    class="card-link">
-                                    📍 成都不止九眼橋，最美夜景安順廊橋
-                                </a>
-                            </div>
-
-                            <div class="attraction-item"
-                                style="flex-direction: column; align-items: flex-start; gap: 8px;">
-                                <div style="width: 100%;">
-                                    <div class="card-title" style="margin-bottom: 4px;">九眼橋(距離約1.6公里)</div>
-                                    <div class="card-desc" style="white-space: normal;">
-                                        成都著名地標，夜景酒吧街氛圍熱鬧</div>
-
-                                    <!-- 圖片連結區塊：寬度自適應，點擊可跳轉至詳細攻略 -->
-                                    <a href="https://gochina.com.tw/chengdu-jiuyan-bridge-nightlife-guide/"
-                                        target="_blank" class="media-figure">
-                                        <img src="Photo/Landmark/九眼橋.jpg" alt="九眼橋">
-                                        <figcaption class="media-caption">九眼橋</figcaption>
-                                    </a>
-                                    <a href="https://gochina.com.tw/chengdu-jiuyan-bridge-nightlife-guide/"
-                                        target="_blank" class="media-figure">
-                                        <img src="Photo/Landmark/新九眼橋.jpg" alt="新九眼橋">
-                                        <figcaption class="media-caption">新九眼橋</figcaption>
-                                    </a>
-                                    <a href="https://gochina.com.tw/chengdu-jiuyan-bridge-nightlife-guide/"
-                                        target="_blank" class="media-figure">
-                                        <img src="Photo/Landmark/九眼橋夜景.avif" alt="九眼橋夜景">
-                                        <figcaption class="media-caption">九眼橋及安順廊橋夜景 - 欣賞酒吧街氛圍的最佳位置</figcaption>
-                                    </a>
-
-                                    <!-- 文字連結 -->
-                                    <a href="https://gochina.com.tw/chengdu-jiuyan-bridge-nightlife-guide/"
-                                        target="_blank" class="card-link">
-                                        📍 成都九眼橋夜生活指南
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 當天相簿連結（不隨行程折疊） -->
-            <div class="card card-album fade-in">
-                <div class="card-icon">📸</div>
-                <div class="card-body">
-                    <h3 class="card-title">4月1日 (三) 相簿</h3>
-                    <p class="card-desc">瀏覽今日精彩照片</p>
-                    <a href="https://l101-nas.tailbf5fb.ts.net:8443/share/XxdGHmAmug6sOO9VAccpUdJoTljHutyiWqCSvak-MzGFUEgNfg4tNcUwtgfRkp-E4nI"
-                        target="_blank" class="card-link album-link">
-                        📷 開啟 IMMICH 相簿
-                    </a>
-                </div>
             </div>
         </section>
 
-        <!-- ========== Day 6: 4月2日 熊貓基地 & 樂山 ========== -->
-        <section class="day-section" id="day6" data-date="2026-04-02">
+        <!-- ============================================
+             Day 6: 2027年 4月6日 (二) 蘇州 ➔ 上海浦東 ✈➔ 高雄
+             - 08:30 辦理退房，專車接送出發
+             - 09:00 遊覽貝聿銘設計的蘇州博物館本館
+             - 11:00 自理享用午餐
+             - 13:00 參訪千年名剎寒山寺 (楓橋夜泊)
+             - 15:00 專車前往上海浦東國際機場 (車程約2.5小時)
+             - 18:30 抵達浦東T2辦理通關登機手續
+             - 20:50 上海浦東直飛高雄機場 (KHH)，包車接送返家
+        ============================================ -->
+        <section class="day-section" id="day6" data-date="2027-04-06">
             <div class="day-header collapsible-trigger">
                 <div class="day-number">06</div>
                 <div class="day-info">
-                    <span class="day-date">4月2日 (四) 農曆2月15日</span>
-                    <h2 class="day-title">熊貓基地 & 樂山大佛</h2>
-                    <p class="day-highlight">大熊貓繁育研究基地・船遊樂山大佛</p>
+                    <span class="day-date">4月6日 (二)</span>
+                    <h2 class="day-title">蘇州 ➔ 上海浦東 ✈➔ 高雄</h2>
+                    <p class="day-highlight">貝聿銘大師封刀之作蘇州博物館・《楓橋夜泊》寒山古寺鐘聲・專車返上海浦東・直飛平安返抵高雄</p>
                 </div>
                 <div class="collapse-icon">▼</div>
             </div>
 
-            <!-- 今日攻略圖（不隨行程折疊） -->
-            <div class="card fade-in" style="padding: 0; overflow: hidden;">
-                <img src="Photo/Itinerary/2026-04-02-1.png" alt="4月2日 行程攻略圖"
-                    style="width: 100%; height: auto; border-radius: 12px; display: block;">
-            </div>
-            <a href="https://www.nmc.cn/publish/forecast/ASC/leshan.html" target="_blank" class="card-link">
-                ⛅ 樂山天氣預報
+            <a href="https://www.nmc.cn/publish/forecast/ASH/shanghai.html" target="_blank" rel="noopener noreferrer"
+                class="card-link" style="margin-bottom: 1rem; display: inline-flex;">
+                ⛅ 上海即時天氣預報
             </a>
 
             <div class="day-content">
-                <!-- 今日攻略圖 -->
-                <div class="card fade-in" style="padding: 0; overflow: hidden;">
-                    <img src="Photo/Itinerary/2026-04-02-2.png" alt="4月2日 行程攻略圖"
-                        style="width: 100%; height: auto; border-radius: 12px; display: block;">
-                </div>
 
-                <!-- 熊貓基地 -->
-                <div class="card card-attraction card-featured fade-in">
-                    <div class="card-icon">🐼</div>
-                    <div class="card-body">
-                        <span class="card-time">09:00-12:00</span>
-                        <h3 class="card-title">大熊貓繁育研究基地</h3>
-                        <p class="card-subtitle">⏱️ 開放時間：07:30-18:00</p>
-                        <div class="info-box">
-                            <p>🚗 約40分鐘車程抵達</p>
-                            <p>⏰ 建議早上09:00前入園（大熊貓最活躍時段）</p>
-                            <p>💡 優先前往幼年大熊貓別墅，觀看幼崽機會較大</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- 圖片連結區塊：寬度自適應，點擊可跳轉至詳細攻略 -->
-                <a href="https://andyventure.com/china-sichuan-chengdu-panda-base/" target="_blank"
-                    class="media-figure">
-                    <img src="Photo/Landmark/成都大熊貓繁育基地.jpg" alt="成都大熊貓繁育基地">
-                </a>
-                <a href="https://andyventure.com/china-sichuan-chengdu-panda-base/" target="_blank"
-                    class="media-figure">
-                    <img src="Photo/Landmark/成都熊貓基地.webp" alt="成都大熊貓繁育基地">
-                    <figcaption class="media-caption">成都大熊貓繁育基地</figcaption>
-                </a>
-                <a href="https://andyventure.com/china-sichuan-chengdu-panda-base/" target="_blank"
-                    class="media-figure">
-                    <img src="Photo/Landmark/成都熊貓基地路線圖.webp" alt="成都熊貓基地路線圖">
-                    <figcaption class="media-caption">成都熊貓基地路線圖</figcaption>
-                </a>
-
-                <!-- 文字連結 -->
-                <a href="https://andyventure.com/china-sichuan-chengdu-panda-base/" target="_blank" class="card-link">
-                    📍 成都熊貓基地(成都大熊貓繁育研究基地)參觀心得、攻略
-                </a>
-
-
-                <!-- 午餐 -->
-                <div class="card card-info fade-in">
-                    <div class="card-icon">🍽️</div>
-                    <div class="card-body">
-                        <h3 class="card-title">自行午餐</h3>
-                    </div>
-                </div>
-
-                <!-- 樂山大佛 -->
-                <div class="card card-attraction card-featured fade-in">
-                    <div class="card-icon">🗿</div>
-                    <div class="card-body">
-                        <h3 class="card-title">樂山大佛</h3>
-                        <p class="card-subtitle">約15:00抵達</p>
-                        <div class="highlight-box">
-                            <p>🚢 <strong>船遊樂山大佛</strong></p>
-                            <p class="quote">「山是一尊佛，佛是一座山」</p>
-                            <p>體驗從江面欣賞71米高的世界最大石刻佛像</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 圖片連結區塊：寬度自適應，點擊可跳轉至詳細攻略 -->
-                <a href="https://andyventure.com/china-sichuan-chengdu-panda-base/" target="_blank"
-                    class="media-figure">
-                    <img src="Photo/Landmark/樂山大佛.jpg" alt="成都樂山大佛">
-                </a>
-                <a href="https://andyventure.com/china-sichuan-chengdu-panda-base/" target="_blank"
-                    class="media-figure">
-                    <img src="Photo/Landmark/樂山大佛.webp" alt="成都樂山大佛">
-                    <figcaption class="media-caption">成都樂山大佛</figcaption>
-                </a>
-
-                <!-- 文字連結 -->
-                <a href="https://www.ourchinastory.com/zh/4915" target="_blank" class="card-link">
-                    📍 世界最大摩崖造像 千年樂山大佛藏有什麽玄機？
-                </a>
-
-                <!-- 住宿卡片 -->
-                <div class="card card-hotel fade-in">
-                    <div class="card-icon">🏨</div>
-                    <div class="card-body">
-                        <span class="card-time">4月2日(四)住宿</span>
-                        <h3 class="card-title">峨眉山高鐵站峨秀湖亞朵飯店(含早餐)</h3>
-                        <p class="card-desc">峨眉山峨山街道山湖路南段33號</p>
-                        <!-- 圖片連結區塊：寬度自適應，點擊可跳轉至詳細資訊 -->
-                        <a href="https://tw.trip.com/hotels/emeishan-hotel-detail-117237825/e-mei-shan-gao-tie-zhan-e-xiu-hu-ya-duo-jiu-dian/"
-                            target="_blank" style="width: 100%; display: block; margin: 4px 0;">
-                            <img src="Photo/Landmark/峨眉山高鐵站峨秀湖亞朵飯店.webp" alt="峨眉山高鐵站峨秀湖亞朵飯店"
-                                style="width: 100%; height: auto; border-radius: 8px; object-fit: cover;">
-                            <figcaption class="media-caption">📍 峨眉山高鐵站峨秀湖亞朵飯店</figcaption>
-                        </a>
-                        <a href="https://tw.trip.com/hotels/emeishan-hotel-detail-117237825/e-mei-shan-gao-tie-zhan-e-xiu-hu-ya-duo-jiu-dian/"
-                            target="_blank" class="card-link">
-                            峨眉山高鐵站峨秀湖亞朵飯店trip簡介(含照片與附近景點)
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 當天相簿連結（不隨行程折疊） -->
-            <div class="card card-album fade-in">
-                <div class="card-icon">📸</div>
-                <div class="card-body">
-                    <h3 class="card-title">4月2日 (四) 相簿</h3>
-                    <p class="card-desc">瀏覽今日精彩照片</p>
-                    <a href="https://l101-nas.tailbf5fb.ts.net:8443/share/IRMYfsi1Xxz3UGCZT40MgrkCaV5N7vJJ_7AIYNQUOCS7sUyCGk_boHkqLq5XmBXoJtA"
-                        target="_blank" class="card-link album-link">
-                        📷 開啟 IMMICH 相簿
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- ========== Day 7: 4月3日 峨眉山 → 上海 ========== -->
-        <section class="day-section" id="day7" data-date="2026-04-03">
-            <div class="day-header collapsible-trigger">
-                <div class="day-number">07</div>
-                <div class="day-info">
-                    <span class="day-date">4月3日 (五)</span>
-                    <h2 class="day-title">峨眉山金頂 → 上海</h2>
-                    <p class="day-highlight">十方普賢金像・金頂四大奇觀</p>
-                </div>
-                <div class="collapse-icon">▼</div>
-            </div>
-
-            <!-- 今日攻略圖（不隨行程折疊） -->
-            <div class="card fade-in" style="padding: 0; overflow: hidden;">
-                <img src="Photo/Itinerary/2026-04-03-1.png" alt="4月3日 行程攻略圖"
-                    style="width: 100%; height: auto; border-radius: 12px; display: block;">
-            </div>
-            <a href="https://www.nmc.cn/publish/forecast/ASC/emeishan.html" target="_blank" class="card-link">
-                ⛅ 峨眉山天氣預報
-            </a>
-
-            <div class="day-content">
-                <!-- 今日攻略圖 -->
-                <div class="card fade-in" style="padding: 0; overflow: hidden;">
-                    <img src="Photo/Itinerary/2026-04-03-2.png" alt="4月3日 行程攻略圖"
-                        style="width: 100%; height: auto; border-radius: 12px; display: block;">
-                </div>
-
-                <!-- 峨眉山 -->
-                <div class="card card-attraction card-featured fade-in">
-                    <div class="card-icon">⛰️</div>
-                    <div class="card-body">
-                        <h3 class="card-title">峨眉山金頂</h3>
-                        <div class="route-detail">
-                            <div class="route-step">
-                                <span class="card-time">08:00-08:30</span>
-                                <span class="step-icon">🚗</span>
-                                <span class="step-text">乘車前往峨眉山景區</span>
-                            </div>
-                            <div class="route-step">
-                                <span class="card-time">08:30-10:00</span>
-                                <span class="step-icon">🚌</span>
-                                <span class="step-text">換乘景區觀光車（約1.5小時）→ 雷洞坪停車場</span>
-                            </div>
-                            <div class="route-step">
-                                <span class="card-time">10:00-10:20</span>
-                                <span class="step-icon">🚶</span>
-                                <span class="step-text">步行20分鐘</span>
-                            </div>
-                            <div class="route-step">
-                                <span class="card-time">10:30-15:00</span>
-                                <span class="step-icon">🚡</span>
-                                <span class="step-text">乘坐索道（約3分鐘）→ 峨眉金頂</span>
-                            </div>
-                        </div>
-
-                        <!-- 圖片連結區塊：寬度自適應，點擊可跳轉至詳細攻略 -->
-                        <a href="https://www.buddhistdoor.org/mingkok/峨眉金頂有四大奇觀據說這兩種常人難見可遇不可求那得要看你是否與普賢菩薩有緣/"
-                            target="_blank" class="media-figure">
-                            <img src="Photo/Landmark/峨眉山金頂.jpg" alt="峨眉山金頂">
-                        </a>
-                        <a href="https://www.finedoor.org/articles/峨眉金頂有四大奇觀，據說這兩種常人難見，可遇/" target="_blank"
-                            class="media-figure">
-                            <img src="Photo/Landmark/峨眉山金頂1.jpg" alt="峨眉山金頂">
-                            <figcaption class="media-caption">峨眉山金頂</figcaption>
-                        </a>
-                        <a href="https://www.finedoor.org/articles/峨眉金頂有四大奇觀，據說這兩種常人難見，可遇/" target="_blank"
-                            class="media-figure">
-                            <img src="Photo/Landmark/峨眉山佛光.jpg" alt="峨眉山佛光">
-                            <figcaption class="media-caption">峨眉山佛光</figcaption>
-                        </a>
-                        <a href="https://www.finedoor.org/articles/峨眉金頂有四大奇觀，據說這兩種常人難見，可遇/" target="_blank"
-                            class="media-figure">
-                            <img src="Photo/Landmark/峨眉山雲海.jpg" alt="峨眉山雲海">
-                            <figcaption class="media-caption">峨眉山雲海</figcaption>
-                        </a>
-                        <a href="https://www.finedoor.org/articles/峨眉金頂有四大奇觀，據說這兩種常人難見，可遇/" target="_blank"
-                            class="media-figure">
-                            <img src="Photo/Landmark/峨眉山普賢座像.jpg" alt="峨眉山普賢座像">
-                        </a>
-                        <a href="https://www.finedoor.org/articles/峨眉金頂有四大奇觀，據說這兩種常人難見，可遇/" target="_blank"
-                            class="media-figure">
-                            <img src="Photo/Landmark/峨眉山普賢座像1.jpg" alt="峨眉山普賢座像">
-                            <figcaption class="media-caption">峨眉山普賢座像</figcaption>
-                        </a>
-
-                        <!-- 文字連結 -->
-                        <a href="https://www.buddhistdoor.org/mingkok/峨眉金頂有四大奇觀據說這兩種常人難見可遇不可求那得要看你是否與普賢菩薩有緣/"
-                            target="_blank" class="card-link">
-                            📍 峨眉金頂四大奇觀
-                        </a>
-                        <div class="highlight-list">
-                            <span class="highlight-item">🏆 48米十方普賢金像</span>
-                            <span class="highlight-item">✨ 金頂四大奇觀(日出、雲海、佛光、聖燈)</span>
-                        </div>
-                        <!-- 文字連結 -->
-                        <a href="https://m.gosctour.com/travels/show.html?id=61" target="_blank" class="card-link">
-                            📍 峨眉山四大奇觀及最佳觀看時間和地點
-                        </a>
-                    </div>
-                </div>
-
-                <!-- 前往機場 -->
+                <!-- 流程卡片：退房出發 -->
                 <div class="card card-transport fade-in">
-                    <div class="card-icon">🚗</div>
+                    <div class="card-icon">🧳</div>
                     <div class="card-body">
-                        <span class="card-time">約15:00</span>
-                        <h3 class="card-title">乘車前往天府機場</h3>
-                        <p class="card-desc">約2.5小時車程，19:00前抵達成都天府T2</p>
+                        <span class="card-time">08:30</span>
+                        <h3 class="card-title">專車接送・辦理退房攜帶行李出發</h3>
+                        <p class="card-desc">於飯店享用早餐後辦理退房，專車行李隨車裝載，展開蘇州最後一日的經典文博與禪韻古剎之旅。</p>
                     </div>
                 </div>
 
-                <!-- 航班 -->
-                <div class="card card-flight fade-in">
-                    <div class="flight-header">
-                        <span class="airline">春秋航空 9C8820 (空中巴士A320-212)</span>
-                    </div>
-                    <div class="flight-route">
-                        <div class="flight-city">
-                            <span class="flight-time">20:30</span>
-                            <span class="flight-name">成都天府 T2</span>
-                        </div>
-                        <div class="flight-line">
-                            <span class="flight-icon">✈</span>
-                        </div>
-                        <div class="flight-city">
-                            <span class="flight-time">23:40</span>
-                            <span class="flight-name">上海虹橋 T1</span>
-                        </div>
-                    </div>
-
-                    <!-- 春秋航空行李限制 -->
-                    <div class="flight-baggage">
-                        <div class="baggage-title">
-                            <span>🧳</span> 行李限制規定
-                        </div>
-                        <div class="baggage-list">
-                            <div class="baggage-item">
-                                <span class="baggage-icon">👜</span>
-                                <div class="baggage-text">
-                                    <strong>手提行李：</strong>7公斤/件，體積 20×30×40cm
-                                </div>
-                            </div>
-                            <div class="baggage-item">
-                                <span class="baggage-icon">🧳</span>
-                                <div class="baggage-text">
-                                    <strong>托運行李：</strong>20公斤/件
-                                </div>
-                            </div>
-                            <div class="baggage-note">
-                                ⚠️ 超重或超件費用：按件收取，每件(≤10KG) 人民幣 300 元
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 住宿 -->
-                <div class="card card-hotel fade-in">
-                    <div class="card-icon">🏨</div>
-                    <div class="card-body">
-                        <span class="card-time">4月3日(五)住宿</span>
-                        <h3 class="card-title">滴水山房花園酒店(不含早餐)</h3>
-                        <p class="card-desc">（上海虹橋機場國會展中心店）</p>
-                        <!-- 圖片連結區塊：寬度自適應，點擊可跳轉至詳細資訊 -->
-                        <a href="https://tw.trip.com/hotels/shanghai-hotel-detail-128262622/dishui-shanfang-garden-hotel/"
-                            target="_blank" style="width: 100%; display: block; margin: 4px 0;">
-                            <img src="Photo/Landmark/滴水山房花園飯店.webp" alt="滴水山房花園酒店"
-                                style="width: 100%; height: auto; border-radius: 8px; object-fit: cover;">
-                            <figcaption class="media-caption">📍 滴水山房花園飯店</figcaption>
-                        </a>
-                        <a href="https://tw.trip.com/hotels/shanghai-hotel-detail-128262622/dishui-shanfang-garden-hotel/"
-                            target="_blank" class="card-link">
-                            滴水山房花園酒店trip簡介(含照片與附近景點)
-                        </a>
-                        <p class="tip">🚶 從虹橋第一航廈步行約3分鐘（160公尺）</p>
-                    </div>
-                </div>
-
-                <!-- 美食 -->
-                <div class="card card-food fade-in">
-                    <div class="card-icon">🍜</div>
-                    <div class="card-body">
-                        <h3 class="card-title">美食建議</h3>
-                        <p>📍 峨眉山區：早餐或午餐推薦</p>
-                        <div class="food-list">
-                            <span class="food-item">🥣 峨眉山豆腐腦</span>
-                            <span class="food-item">🥬 峨眉素齋</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 當天相簿連結（不隨行程折疊） -->
-            <div class="card card-album fade-in">
-                <div class="card-icon">📸</div>
-                <div class="card-body">
-                    <h3 class="card-title">4月3日 (五) 相簿</h3>
-                    <p class="card-desc">瀏覽今日精彩照片</p>
-                    <a href="https://l101-nas.tailbf5fb.ts.net:8443/share/Po6FmX0FyA2gJLPmAwIreIW57zJK0cOc3OzyhWhT0ah_g7RFi4-ZQVqRKA8cBlXxywo"
-                        target="_blank" class="card-link album-link">
-                        📷 開啟 IMMICH 相簿
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- ========== Day 8: 4月4日 烏鎮 ========== -->
-        <section class="day-section" id="day8" data-date="2026-04-04">
-            <div class="day-header collapsible-trigger">
-                <div class="day-number">08</div>
-                <div class="day-info">
-                    <span class="day-date">4月4日 (六)</span>
-                    <h2 class="day-title">烏鎮西柵一日遊</h2>
-                    <p class="day-highlight">江南水鄉・古鎮風情</p>
-                </div>
-                <div class="collapse-icon">▼</div>
-            </div>
-
-            <!-- 今日攻略圖（不隨行程折疊） -->
-            <div class="card fade-in" style="padding: 0; overflow: hidden;">
-                <img src="Photo/Itinerary/上海-烏鎮2日遊.png" alt="4月4日 行程攻略圖"
-                    style="width: 100%; height: auto; border-radius: 12px; display: block;">
-            </div>
-            <a href="https://www.weaoo.com/jingdian/zhejiang-wzxzjq/" target="_blank" class="card-link">
-                ⛅ 烏鎮西柵景區天氣預報
-            </a>
-
-            <div class="day-content">
-                <!-- 今日攻略圖 -->
-                <div class="card fade-in" style="padding: 0; overflow: hidden;">
-                    <img src="Photo/Itinerary/2026-04-04.png" alt="4月4日 行程攻略圖"
-                        style="width: 100%; height: auto; border-radius: 12px; display: block;">
-                </div>
-
-                <!-- 交通資訊 -->
-                <div class="card card-transport fade-in">
-                    <div class="card-icon">🚗</div>
-                    <div class="card-body">
-                        <span class="card-time">08:00-09:30</span>
-                        <h3 class="card-title">前往烏鎮</h3>
-                        <p class="card-desc">單程177公里，約1.5小時車程</p>
-                    </div>
-                </div>
-
-                <!-- 烏鎮景區 -->
-                <div class="card card-attraction card-featured fade-in">
-                    <div class="card-icon">🏘️</div>
-                    <div class="card-body">
-                        <h3 class="card-title">烏鎮西柵景區</h3>
-                        <p class="card-desc">漫步江南水鄉，體驗古鎮慢生活</p>
-                        <div class="highlight-list">
-                            <span class="highlight-item">🌊 水鄉風光</span>
-                            <span class="highlight-item">🏮 古鎮街道</span>
-                            <span class="highlight-item">🌙 夜景燈火</span>
-                        </div>
-                        <!-- 圖片連結區塊：寬度自適應，點擊可跳轉至詳細攻略 -->
-                        <a href="http://www.wuzhen.com.cn/web/food/leDetails?id=73" target="_blank"
-                            class="media-figure">
-                            <img src="Photo/Landmark/烏鎮西柵景區1.jpg" alt="烏鎮西柵景區">
-                        </a>
-                        <a href="http://www.wuzhen.com.cn/web/food/leDetails?id=73" target="_blank"
-                            class="media-figure">
-                            <img src="Photo/Landmark/烏鎮西柵景區2.jpg" alt="烏鎮西柵景區">
-                        </a>
-                        <a href="http://www.wuzhen.com.cn/web/food/leDetails?id=73" target="_blank"
-                            class="media-figure">
-                            <img src="Photo/Landmark/烏鎮西柵景區3.jpg" alt="烏鎮西柵景區">
-                        </a>
-                        <a href="http://www.wuzhen.com.cn/web/food/leDetails?id=73" target="_blank"
-                            class="media-figure">
-                            <img src="Photo/Landmark/烏鎮西柵景區4.jpg" alt="烏鎮西柵景區">
-                        </a>
-                        <a href="http://www.wuzhen.com.cn/web/food/leDetails?id=73" target="_blank"
-                            class="media-figure">
-                            <img src="Photo/Landmark/烏鎮西柵景區5.jpg" alt="烏鎮西柵景區">
-                        </a>
-                        <a href="http://www.wuzhen.com.cn/web/food/leDetails?id=73" target="_blank"
-                            class="media-figure">
-                            <img src="Photo/Landmark/烏鎮西柵景區6.jpg" alt="烏鎮西柵景區">
-                            <figcaption class="media-caption">烏鎮西柵景區</figcaption>
-                        </a>
-
-                        <!-- 文字連結 -->
-                        <a href="http://www.wuzhen.com.cn/web/food/leDetails?id=73" target="_blank" class="card-link">
-                            📍 烏鎮西柵景區傳統體驗
-                        </a>
-                    </div>
-                </div>
-
-                <!-- 住宿 -->
-                <div class="card card-hotel fade-in">
-                    <div class="card-icon">🏨</div>
-                    <div class="card-body">
-                        <span class="card-time">4月4日(六)住宿</span>
-                        <h3 class="card-title">烏鎮麗呈酒店(含早餐)</h3>
-                        <p class="card-desc">（西柵景區南門店）</p>
-                        <!-- 圖片連結區塊：寬度自適應，點擊可跳轉至詳細資訊 -->
-                        <a href="https://tw.trip.com/hotels/tongxiang-hotel-detail-122359365/rezen-hotel-wuzhenxizha-scenic-area/"
-                            target="_blank" style="width: 100%; display: block; margin: 4px 0;">
-                            <img src="Photo/Landmark/烏鎮麗呈酒店.webp" alt="烏鎮麗呈酒店"
-                                style="width: 100%; height: auto; border-radius: 8px; object-fit: cover;">
-                            <figcaption class="media-caption">📍 烏鎮麗呈酒店</figcaption>
-                        </a>
-                        <a href="https://tw.trip.com/hotels/tongxiang-hotel-detail-122359365/rezen-hotel-wuzhenxizha-scenic-area/"
-                            target="_blank" class="card-link">
-                            烏鎮麗呈酒店trip簡介(含照片與附近景點)
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 當天相簿連結（不隨行程折疊） -->
-            <div class="card card-album fade-in">
-                <div class="card-icon">📸</div>
-                <div class="card-body">
-                    <h3 class="card-title">4月4日 (六) 相簿</h3>
-                    <p class="card-desc">瀏覽今日精彩照片</p>
-                    <a href="https://l101-nas.tailbf5fb.ts.net:8443/share/57tBD7bfIU3z0nAbvVKd0BHzlQmXQIWkhXaD3GZKANgWoK5a8ZOwUI47WQgJqR3gD_Q"
-                        target="_blank" class="card-link album-link">
-                        📷 開啟 IMMICH 相簿
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- ========== Day 9: 4月5日 返程 ========== -->
-        <section class="day-section" id="day9" data-date="2026-04-05">
-            <div class="day-header collapsible-trigger">
-                <div class="day-number">09</div>
-                <div class="day-info">
-                    <span class="day-date">4月5日 (日)</span>
-                    <h2 class="day-title">上海一日遊 & 返程</h2>
-                    <p class="day-highlight">豫園・四行倉庫・武康路・孫中山故居・世博園區・徐家匯</p>
-                </div>
-                <div class="collapse-icon">▼</div>
-            </div>
-
-            <!-- 今日攻略圖（不隨行程折疊） -->
-            <div class="card fade-in" style="padding: 0; overflow: hidden;">
-                <img src="Photo/Itinerary/上海-烏鎮2日遊.png" alt="4月4日 行程攻略圖"
-                    style="width: 100%; height: auto; border-radius: 12px; display: block;">
-            </div>
-            <a href="https://www.nmc.cn/publish/forecast/ASH/shanghai.html" target="_blank" class="card-link">
-                ⛅ 上海天氣預報
-            </a>
-
-            <div class="day-content">
-                <!-- 今日攻略圖 -->
-                <div class="card fade-in" style="padding: 0; overflow: hidden;">
-                    <img src="Photo/Itinerary/2026-04-05.png" alt="4月5日 行程攻略圖"
-                        style="width: 100%; height: auto; border-radius: 12px; display: block;">
-                </div>
-
-                <!-- 返回上海 -->
-                <div class="card card-transport fade-in">
-                    <div class="card-icon">🚗</div>
-                    <div class="card-body">
-                        <h3 class="card-title">返回上海市區</h3>
-                    </div>
-                </div>
-
-                <!-- 上海景點 -->
+                <!-- 景點卡片：蘇州博物館本館 -->
                 <div class="card card-attraction fade-in">
                     <div class="card-icon">🏛️</div>
                     <div class="card-body">
-                        <h3 class="card-title">上海一日遊</h3>
-                        <div class="attraction-list">
-                            <div class="attraction-item"
-                                style="flex-direction: column; align-items: flex-start; gap: 8px;">
-                                <div style="width: 100%;">
-                                    <div class="card-title" style="margin-bottom: 4px;">上海豫園商城</div>
-                                    <div class="card-desc" style="white-space: normal;">
-                                        📍上海著名的古典園林，明代私家園林建築的代表作</div>
-                                </div>
-                                <!-- 圖片連結區塊：寬度自適應，點擊可跳轉至詳細攻略 -->
-                                <a href="https://www.davidwin.net/?p=53471" target="_blank" class="media-figure">
-                                    <img src="Photo/Landmark/上海豫園商城1.jpg" alt="上海豫園商城">
-                                </a>
-                                <a href="https://www.davidwin.net/?p=53471" target="_blank" class="media-figure">
-                                    <img src="Photo/Landmark/上海豫園商城2.jpg" alt="上海豫園商城">
-                                </a>
-                                <a href="https://www.davidwin.net/?p=53471" target="_blank" class="media-figure">
-                                    <img src="Photo/Landmark/上海豫園1.webp" alt="上海豫園商城">
-                                </a>
-                                <a href="https://www.davidwin.net/?p=53471" target="_blank" class="media-figure">
-                                    <img src="Photo/Landmark/上海豫園2.webp" alt="上海豫園商城">
-                                    <figcaption class="media-caption">上海豫園商城</figcaption>
-                                </a>
-
-                                <!-- 文字連結 -->
-                                <a href="https://www.davidwin.net/?p=53471" target="_blank" class="card-link">
-                                    📍 全上海最中國的地方：豫園商城
-                                </a>
-                            </div>
-
-                            <div class="attraction-item"
-                                style="flex-direction: column; align-items: flex-start; gap: 8px;">
-                                <div style="width: 100%;">
-                                    <div class="card-title" style="margin-bottom: 4px;">上海四行倉庫抗戰紀念館</div>
-                                    <div class="card-desc" style="white-space: normal;">💰門票：免費。開放時間：週二至週日 09:00 - 16:30
-                                        (16:00停止入館)，週一閉館。</div>
-                                    <div class="card-desc" style="white-space: normal;">👩‍💼公益講解場次時間：
-                                        10:00、11:00、14:00、15:00。</div>
-                                    <div class="card-desc" style="white-space: normal;">
-                                        ✨四行倉庫有很多個，因為四行倉庫其實是一個統稱：金城、中南、大陸、鹽業四大銀行的倉庫都稱為四行倉庫。所以沿著蘇州河畔，一路上你可以見到很多四行倉庫。</div>
-                                </div>
-                                <!-- 圖片連結區塊：寬度自適應，點擊可跳轉至詳細攻略 -->
-                                <a href="https://www.davidwin.net/?p=635" target="_blank"
-                                    style="width: 100%; display: block; margin: 4px 0;">
-                                    <img src="Photo/Landmark/上海四行倉庫.jpg" alt="上海四行倉庫"
-                                        style="width: 100%; height: auto; border-radius: 8px; object-fit: cover;">
-                                </a>
-                                <a href="https://www.davidwin.net/?p=53471" target="_blank" class="media-figure">
-                                    <img src="Photo/Landmark/上海四行倉庫1.jpg" alt="上海四行倉庫">
-                                </a>
-                                <a href="https://www.davidwin.net/?p=53471" target="_blank" class="media-figure">
-                                    <img src="Photo/Landmark/上海四行倉庫2.jpg" alt="上海四行倉庫">
-                                </a>
-                                <a href="https://www.davidwin.net/?p=53471" target="_blank" class="media-figure">
-                                    <img src="Photo/Landmark/上海四行倉庫3.jpg" alt="上海四行倉庫">
-                                    <figcaption class="media-caption">上海四行倉庫抗戰紀念館</figcaption>
-                                </a>
-                                <a href="https://www.davidwin.net/?p=53471" target="_blank" class="media-figure">
-                                    <img src="Photo/Landmark/上海四行倉庫4.jpg" alt="上海四行倉庫">
-                                    <figcaption class="media-caption">八百壯士電影裡林青霞飾演的楊惠敏</figcaption>
-                                </a>
-
-                                <!-- 文字連結 -->
-                                <a href="https://www.davidwin.net/?p=635" target="_blank" class="card-link">
-                                    📍 【上海景點】八百壯士死守的"四行倉庫"
-                                </a>
-                                <a href="https://tw.trip.com/travel-guide/attraction/shanghai/shanghai-sihang-warehouse-battle-memorial-22879410/"
-                                    target="_blank" class="card-link">
-                                    📍 上海四行倉庫抗戰紀念館
-                                </a>
-                            </div>
-
-                            <div class="attraction-item"
-                                style="flex-direction: column; align-items: flex-start; gap: 8px;">
-                                <div style="width: 100%;">
-                                    <div class="card-title" style="margin-bottom: 4px;">武康路老洋房/梧桐樹</div>
-                                    <div class="card-desc" style="white-space: normal;">
-                                        📍上海最具歐陸風情的歷史街區，梧桐樹蔭下的老洋房風景優美</div>
-                                </div>
-
-                                <!-- 圖片連結區塊：寬度自適應，點擊可跳轉至詳細攻略 -->
-                                <a href="https://www.davidwin.net/?p=13633" target="_blank" class="media-figure">
-                                    <img src="Photo/Landmark/武康路導覽.jpg" alt="漫步武康路">
-                                    <figcaption class="media-caption">漫步武康路導覽</figcaption>
-                                </a>
-
-                                <!-- 文字連結 -->
-                                <a href="https://www.davidwin.net/?p=13633" target="_blank" class="card-link">
-                                    📍 【上海景點】武康路漫步第一站：老房子藝術中心
-                                </a>
-                            </div>
-
-                            <div class="attraction-item"
-                                style="flex-direction: column; align-items: flex-start; gap: 8px;">
-                                <div style="width: 100%;">
-                                    <div class="card-title" style="margin-bottom: 4px;">孫中山故居</div>
-                                    <div class="card-desc" style="white-space: normal;">
-                                        📍位於香山路7號的歷史建築，國父孫中山先生曾在此居住</div>
-                                </div>
-
-                                <!-- 圖片連結區塊：寬度自適應，點擊可跳轉至詳細攻略 -->
-                                <a href="https://fsjane.pixnet.net/blog/posts/17200903081" target="_blank"
-                                    class="media-figure">
-                                    <img src="Photo/Landmark/上海孫中山故居紀念館1.jpg" alt="上海孫中山故居紀念館">
-                                </a>
-                                <a href="https://fsjane.pixnet.net/blog/posts/17200903081" target="_blank"
-                                    class="media-figure">
-                                    <img src="Photo/Landmark/上海孫中山故居紀念館2.jpg" alt="上海孫中山故居紀念館">
-                                    <figcaption class="media-caption">上海孫中山故居紀念館</figcaption>
-                                </a>
-
-                                <!-- 文字連結 -->
-                                <a href="https://fsjane.pixnet.net/blog/posts/17200903081" target="_blank"
-                                    class="card-link">
-                                    📍 【上海景點】上海孫中山故居紀念館 鄰近田子坊
-                                </a>
-                            </div>
-
-                            <div class="attraction-item"
-                                style="flex-direction: column; align-items: flex-start; gap: 8px;">
-                                <div style="width: 100%;">
-                                    <div class="card-title" style="margin-bottom: 4px;">上海世博文化公園</div>
-                                    <div class="card-desc" style="white-space: normal;">
-                                        📍2010年上海世界博覽會舉辦地，現為文化創意產業園區</div>
-                                </div>
-                                <!-- 圖片連結區塊：寬度自適應，點擊可跳轉至詳細攻略 -->
-                                <a href="https://www.expoculturepark.cn/" target="_blank" class="media-figure">
-                                    <img src="Photo/Landmark/上海世博文化公園1.jpg" alt="上海世博文化公園">
-                                </a>
-                                <a href="https://www.expoculturepark.cn/" target="_blank" class="media-figure">
-                                    <img src="Photo/Landmark/上海世博文化公園2.jpg" alt="上海世博文化公園">
-                                </a>
-                                <a href="https://www.expoculturepark.cn/" target="_blank" class="media-figure">
-                                    <img src="Photo/Landmark/上海世博文化公園3.jpg" alt="上海世博文化公園">
-                                </a>
-                                <a href="https://www.expoculturepark.cn/" target="_blank" class="media-figure">
-                                    <img src="Photo/Landmark/上海世博文化公園4.jpg" alt="上海世博文化公園">
-                                    <figcaption class="media-caption">上海世博文化公園</figcaption>
-                                </a>
-                                <!-- 文字連結 -->
-                                <a href="https://www.expoculturepark.cn/" target="_blank" class="card-link">
-                                    📍 上海世博文化公園
-                                </a>
-                            </div>
-
-                            <div class="attraction-item"
-                                style="flex-direction: column; align-items: flex-start; gap: 8px;">
-                                <div style="width: 100%;">
-                                    <div class="card-title" style="margin-bottom: 4px;">徐家匯</div>
-                                    <div class="card-desc" style="white-space: normal;">
-                                        📍上海重要的交通樞紐與商業中心，匯集購物、美食與娛樂</div>
-                                </div>
-                                <!-- 圖片連結區塊：寬度自適應，點擊可跳轉至詳細攻略 -->
-                                <a href="https://www.davidwin.net/?p=14550" target="_blank" class="media-figure">
-                                    <img src="Photo/Landmark/徐家匯站周邊地圖.jpg" alt="徐家匯站周邊地圖">
-                                    <figcaption class="media-caption">徐家匯站周邊地圖</figcaption>
-                                </a>
-                                <a href="https://www.davidwin.net/?p=14550" target="_blank" class="media-figure">
-                                    <img src="Photo/Landmark/徐家匯徐光啟紀念館.jpg" alt="徐家匯徐光啟紀念館">
-                                    <figcaption class="media-caption">徐家匯徐光啟紀念館</figcaption>
-                                </a>
-                                <a href="https://www.ourchinastory.com/zh/3574/" target="_blank" class="media-figure">
-                                    <img src="Photo/Landmark/徐家匯地標美羅城百貨.jpg" alt="徐家匯地標美羅城百貨">
-                                    <figcaption class="media-caption">徐家匯地標美羅城百貨</figcaption>
-                                </a>
-                                <!-- 美羅城百貨影片 -->
-                                <figure class="media-figure">
-                                    <video width="100%" style="aspect-ratio: 16 / 9;" controls preload="metadata"
-                                        poster="Photo/Landmark/徐家匯地標美羅城百貨1.jpg">
-                                        <source src="Photo/Landmark/徐家匯地標美羅城百貨.mp4" type="video/mp4">
-                                        您的瀏覽器不支援影片播放。
-                                    </video>
-                                    <figcaption class="media-caption">🎬 徐家匯美羅城 - 全球最大裸眼3D球幕-上海巨型「水晶球」奇幻奪目</figcaption>
-                                </figure>
-
-                                <a href="https://www.davidwin.net/?p=14550" target="_blank" class="media-figure">
-                                    <img src="Photo/Landmark/徐家匯地標建築天主堂.jpg" alt="徐家匯地標建築天主堂">
-                                    <figcaption class="media-caption">徐家匯地標建築天主堂</figcaption>
-                                </a>
-                                <!-- 文字連結 -->
-                                <a href="https://www.davidwin.net/?p=14550" target="_blank" class="card-link">
-                                    📍 【上海景點】因徐光啟而命名，上海中心鬧市：徐家匯源
-                                </a>
-                            </div>
-                        </div>
+                        <span class="card-time">09:00</span>
+                        <h3 class="card-title">建築大師貝聿銘封刀之作——【蘇州博物館本館】</h3>
+                        <p class="card-desc">
+                            造訪由享譽世界的華裔建築大師貝聿銘傾心打造的<strong>蘇州博物館本館</strong>。大師將傳統蘇式粉牆黛瓦建築元素與現代幾何鋼骨、玻璃天窗完美結合，達到「中而新、蘇而新」的極致和諧。館內水庭的<strong>「片石假山」</strong>以石為紙、以光為墨，宛如立體宋代山水畫，並可觀賞傳承自明代文徵明親手植栽之紫藤園，是絕不可錯過的當代建築傳世瑰寶。
+                        </p>
+                        <!-- 蘇州博物館本館實景照片 -->
+                        <a href="https://heidihihi.com/szmuseum/" target="_blank" rel="noopener noreferrer"
+                            class="media-figure">
+                            <img src="Photo/Landmark/蘇州博物館本館.webp" alt="貝聿銘設計之蘇州博物館本館片石假山" loading="lazy">
+                            <figcaption class="media-caption">🏛️ 蘇州博物館本館——建築大師貝聿銘封刀之作，「以壁為紙、以石為繪」當代園林典範</figcaption>
+                        </a>
+                        <a href="https://heidihihi.com/szmuseum/" target="_blank" rel="noopener noreferrer"
+                            class="card-link" style="margin-top: 0.75rem;">
+                            🔗 蘇州最夯【蘇州博物館】保母級預約攻略介紹與多處網紅美拍打卡位
+                        </a>
                     </div>
                 </div>
 
-                <!-- 前往機場 -->
-                <div class="card card-transport fade-in">
-                    <div class="card-icon">🚗</div>
+                <!-- 美食卡片：自理午餐 -->
+                <div class="card card-food fade-in">
+                    <div class="card-icon">🥢</div>
                     <div class="card-body">
-                        <h3 class="card-title">前往浦東機場</h3>
-                        <p class="card-desc">18:30前抵達上海浦東T2</p>
+                        <span class="card-time">11:00</span>
+                        <h3 class="card-title">自理享用美味午餐</h3>
+                        <p class="card-desc">於蘇州市區享用江南行最後一頓午餐，回味美味的蘇式麵點與糕糰。</p>
                     </div>
                 </div>
 
-                <!-- 返程航班 -->
-                <div class="card card-flight card-featured fade-in">
+                <!-- 景點卡片：寒山寺 -->
+                <div class="card card-attraction fade-in">
+                    <div class="card-icon">🔔</div>
+                    <div class="card-body">
+                        <span class="card-time">13:00</span>
+                        <h3 class="card-title">參訪千古名剎【寒山寺】（《楓橋夜泊》古寺鐘聲）</h3>
+                        <p class="card-desc">
+                            專車前往因唐代詩人張繼名作《楓橋夜泊》「月落烏啼霜滿天，江楓漁火對愁眠。姑蘇城外寒山寺，夜半鐘聲到客船」而名揚四海的<strong>寒山寺</strong>。走訪古木扶疏的大雄寶殿、觀音峰、寒拾殿，仰望唐代建築風格鐘樓，撫摸歷代文人碑刻，敲響福鐘祈求全家安康順遂。
+                        </p>
+                        <!-- 寒山寺實景照片 -->
+                        <a href="https://www.davidwin.net/?p=55894" target="_blank" rel="noopener noreferrer"
+                            class="media-figure">
+                            <img src="Photo/Landmark/寒山寺.jpg" alt="姑蘇城外寒山寺大殿與鐘樓" loading="lazy">
+                            <figcaption class="media-caption">🔔 姑蘇城外寒山寺——《楓橋夜泊》千古名詩意境，古剎悠揚鐘聲祈福平安</figcaption>
+                        </a>
+                        <a href="https://www.davidwin.net/?p=55894" target="_blank" rel="noopener noreferrer"
+                            class="card-link" style="margin-top: 0.75rem;">
+                            🔗 【蘇州景點】楓橋夜泊的夜半鐘聲：寒山寺千年勝景與歷史導讀
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 交通卡片：前往上海浦東機場 -->
+                <div class="card card-transport fade-in">
+                    <div class="card-icon">🚌</div>
+                    <div class="card-body">
+                        <span class="card-time">15:00</span>
+                        <h3 class="card-title">專車啟程前往上海浦東國際機場</h3>
+                        <p class="card-desc">告別美麗水鄉姑蘇城，搭乘專屬旅遊中巴行駛高速公路直奔上海浦東國際機場（PVG），車程約 2.5 小時，預計於 <strong>18:30
+                                前順利抵達浦東機場 T2 航廈</strong>。</p>
+                    </div>
+                </div>
+
+                <!-- 流程卡片：浦東機場出境通關 -->
+                <div class="card card-transport fade-in">
+                    <div class="card-icon">🛫</div>
+                    <div class="card-body">
+                        <span class="card-time">18:30</span>
+                        <h3 class="card-title">抵達上海浦東機場 T2・辦理登機與託運</h3>
+                        <p class="card-desc">辦理國際線登機劃位手續，托運大型行李（請留意行動電源切勿托運，必須隨身攜帶且具備清晰 CCC
+                            認證），通過安檢與邊防出境手續，於免稅店稍作巡禮並至登機門候機。</p>
+                    </div>
+                </div>
+
+                <!-- 航班卡片：上海浦東直飛高雄 -->
+                <div class="card card-flight fade-in">
                     <div class="flight-header">
-                        <span class="airline">長榮航空 BR705 (空中巴士A321)</span>
-                        <span class="flight-badge">🏠 返程</span>
+                        <span class="airline">直飛國際航班 ✈ 上海浦東 ➔ 高雄小港</span>
                     </div>
                     <div class="flight-route">
                         <div class="flight-city">
-                            <span class="flight-time">20:05</span>
-                            <span class="flight-name">上海浦東 T2</span>
+                            <span class="flight-time">20:50</span>
+                            <span class="flight-name">上海浦東 PVG</span>
                         </div>
                         <div class="flight-line">
                             <span class="flight-icon">✈</span>
                         </div>
                         <div class="flight-city">
-                            <span class="flight-time">22:20</span>
+                            <span class="flight-time">23:00</span>
                             <span class="flight-name">高雄 KHH</span>
                         </div>
                     </div>
-
-                    <!-- 長榮航空行李限制 -->
                     <div class="flight-baggage">
                         <div class="baggage-title">
-                            <span>🧳</span> 行李限制規定
+                            <span>🧳</span> 返程行李重要提醒
                         </div>
                         <div class="baggage-list">
                             <div class="baggage-item">
-                                <span class="baggage-icon">👜</span>
-                                <div class="baggage-text">
-                                    <strong>手提行李：</strong>7公斤/件，體積 23×36×56cm
-                                </div>
-                            </div>
-                            <div class="baggage-item">
-                                <span class="baggage-icon">🧳</span>
-                                <div class="baggage-text">
-                                    <strong>托運行李：</strong>23公斤/件，三邊之和不超過158cm
-                                </div>
-                            </div>
-                            <div class="baggage-item">
                                 <span class="baggage-icon">⚠️</span>
                                 <div class="baggage-text">
-                                    <strong>超重/尺寸費用規定：</strong><br>
-                                    • 基本超件費：每件 美金 140 元<br>
-                                    • 重量 23~32kg：加收 0.5 件費用<br>
-                                    • 重量 32~45kg：加收 3 件費用 (需經核可)<br>
-                                    • 尺寸 158~203cm：加收 1 件費用<br>
-                                    • 尺寸 203~292cm：加收 2 件費用
+                                    <strong>防範非洲豬瘟：</strong>嚴禁攜帶任何肉製品（如鮮肉月餅、肉粽、香腸、牛肉乾、板鴨）入境台灣，以免觸法受重罰！
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- 交通卡片：回程 -->
-            <div class="card card-transport fade-in">
-                <div class="card-icon">🚐</div>
-                <div class="card-body">
-                    <span class="card-time">22:20</span>
-                    <h3 class="card-title">機場包車回台南</h3>
-                    <p class="card-desc">下飛機後開手機到10號出口(兆豐銀行旁)，走出來的左邊停車場上車</p>
+                <!-- 交通卡片：返家專車接送 -->
+                <div class="card card-transport fade-in">
+                    <div class="card-icon">🚐</div>
+                    <div class="card-body">
+                        <span class="card-time">23:30</span>
+                        <h3 class="card-title">抵達高雄小港機場・包車接送平安返家</h3>
+                        <p class="card-desc">飛機順利返抵高雄小港國際機場，領取托運行李通過台灣海關後，會合預約之接機包車，平安舒適接送返家，圓滿結束 6 天充實溫馨的蘇杭江南之旅！</p>
+                    </div>
                 </div>
-            </div>
 
-            <!-- 當天相簿連結（不隨行程折疊） -->
-            <div class="card card-album fade-in">
-                <div class="card-icon">📸</div>
-                <div class="card-body">
-                    <h3 class="card-title">4月5日 (日) 相簿</h3>
-                    <p class="card-desc">瀏覽今日精彩照片</p>
-                    <a href="https://l101-nas.tailbf5fb.ts.net:8443/share/OVTt8OxJFdP4TUhgxPHQYYtiZX-rr421s123eWP8kYpIupggJjbk4vZ-dme0-LjFxD0"
-                        target="_blank" class="card-link album-link">
-                        📷 開啟 IMMICH 相簿
-                    </a>
+                <!-- 結束紀念卡片 -->
+                <div class="card card-end fade-in">
+                    <div class="end-content">
+                        <span class="end-icon">🎉</span>
+                        <h3>2027 蘇杭春季 6 日深度之旅圓滿落幕</h3>
+                        <p>西湖微風、古寺鐘聲、水鄉依依，期待下一次與您再度踏上精彩旅途！</p>
+                    </div>
                 </div>
-            </div>
 
-            <!-- 結束卡片 -->
-            <div class="card card-end fade-in">
-                <div class="end-content">
-                    <span class="end-icon">🎉</span>
-                    <h3>旅程圓滿結束</h3>
-                    <p>期待下次的精彩旅程！</p>
-                </div>
-            </div>
             </div>
         </section>
 
     </main>
 
     <!-- ============================================
-         手機版底部浮動導航列 (Mobile Bottom Navigation)
-         - 僅在手機螢幕寬度時顯示
-         - 可橫向滑動選擇日期
-         - 點擊跳轉至對應區塊
+         【模組四】手機版底部橫向滑動導航列 (Mobile Bottom Navigation)
+         - 僅在行動裝置螢幕寬度（<=768px）時於底部顯示
+         - 支援手指橫向滑動選取
+         - 點擊快速平滑跳轉至目標日程
     ============================================ -->
     <nav class="mobile-nav" id="mobileNav">
         <div class="mobile-nav-container">
@@ -2478,54 +1184,42 @@
             </a>
             <a href="#day1" class="mobile-nav-item" data-day="1">
                 <span class="mobile-nav-day">D1</span>
-                <span class="mobile-nav-city">上海</span>
+                <span class="mobile-nav-city">杭州</span>
             </a>
             <a href="#day2" class="mobile-nav-item" data-day="2">
                 <span class="mobile-nav-day">D2</span>
-                <span class="mobile-nav-city">成都</span>
+                <span class="mobile-nav-city">靈隱</span>
             </a>
             <a href="#day3" class="mobile-nav-item" data-day="3">
                 <span class="mobile-nav-day">D3</span>
-                <span class="mobile-nav-city">黃龍</span>
+                <span class="mobile-nav-city">西湖</span>
             </a>
             <a href="#day4" class="mobile-nav-item" data-day="4">
                 <span class="mobile-nav-day">D4</span>
-                <span class="mobile-nav-city">九寨溝</span>
+                <span class="mobile-nav-city">周莊</span>
             </a>
             <a href="#day5" class="mobile-nav-item" data-day="5">
                 <span class="mobile-nav-day">D5</span>
-                <span class="mobile-nav-city">成都</span>
+                <span class="mobile-nav-city">蘇州</span>
             </a>
             <a href="#day6" class="mobile-nav-item" data-day="6">
                 <span class="mobile-nav-day">D6</span>
-                <span class="mobile-nav-city">樂山</span>
-            </a>
-            <a href="#day7" class="mobile-nav-item" data-day="7">
-                <span class="mobile-nav-day">D7</span>
-                <span class="mobile-nav-city">峨眉山</span>
-            </a>
-            <a href="#day8" class="mobile-nav-item" data-day="8">
-                <span class="mobile-nav-day">D8</span>
-                <span class="mobile-nav-city">烏鎮</span>
-            </a>
-            <a href="#day9" class="mobile-nav-item" data-day="9">
-                <span class="mobile-nav-day">D9</span>
                 <span class="mobile-nav-city">返程</span>
             </a>
         </div>
     </nav>
 
     <!-- ============================================
-         頁尾區塊 (Footer)
+         【模組五】頁尾版權與總結區塊 (Footer)
     ============================================ -->
     <footer class="footer">
         <div class="footer-content">
-            <p>2026 春季旅行 | 上海·成都·九寨溝·峨眉山·烏鎮 9日遊</p>
-            <p class="footer-date">3月28日 - 4月5日</p>
+            <p>2027 春季旅行 | 杭州·西溪·塘棲·周莊·蘇州 6日遊</p>
+            <p class="footer-date">2027年 4月1日 - 4月6日</p>
         </div>
     </footer>
 
-    <!-- 載入互動邏輯腳本 -->
+    <!-- 載入專案核心互動邏輯腳本 (平滑滾動、時間軸監聽、日期折疊、淡入動畫) -->
     <script src="index.js"></script>
 </body>
 

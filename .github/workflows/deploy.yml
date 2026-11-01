@@ -1,66 +1,85 @@
-# ============================================
-# GitHub Actions 自動部署到 GitHub Pages
-# ============================================
+# ==============================================================================
+# GitHub Actions 自動部署工作流程：自動部署靜態旅遊網頁至 GitHub Pages
+# 專案名稱：2027Travel
+# 儲存庫網址：https://github.com/v1277chen/2027Travel.git
+# 部署成果網址：https://v1277chen.github.io/2027Travel/
+# ==============================================================================
 # 
-# 功能說明：
-# - 當程式碼推送到 main 分支時自動觸發部署
-# - 將網頁檔案部署到 GitHub Pages
+# 工作流程用途：
+# 1. 監控 2027Travel 儲存庫主要分支（main 或 master）的程式碼推送事件。
+# 2. 自動執行靜態網站打包、頁面環境配置與成品上傳。
+# 3. 部署產物至 GitHub Pages 伺服器，使旅遊行程網頁能全天候在線供團隊與團員即時檢視。
+# 4. 支援 GitHub 網頁介面上的手動一鍵觸發（workflow_dispatch），便於隨時重新發布。
 #
-# 使用方式：
-# 1. 將專案推送到 GitHub 倉庫
-# 2. 在倉庫設定中啟用 GitHub Pages（選擇 GitHub Actions 作為來源）
-# 3. 之後每次推送都會自動更新網站
+# 使用事前準備步驟：
+# 1. 將程式碼推送到 GitHub 2027Travel 遠端儲存庫。
+# 2. 進入該 GitHub 專案倉庫之「Settings」分頁 ➔ 點選側邊欄「Pages」。
+# 3. 在「Build and deployment」下的「Source」來源下拉選單中，選取【GitHub Actions】。
+# 4. 儲存後，後續每次程式碼推送即會由本 Action 全自動建置並發布。
+# ==============================================================================
 
-name: 部署到 GitHub Pages
+# 工作流程於 GitHub Actions 介面顯示之繁體中文名稱
+name: 自動部署到 GitHub Pages
 
-# 觸發條件：當推送到 main 分支時執行
+# 觸發條件設定
 on:
+  # 當有新的 commit 推送至 main 或 master 分支時自動啟動部署流程
   push:
     branches:
       - main
-  # 允許手動觸發部署
+      - master
+
+  # 允許使用者在 GitHub Actions 頁面手動點擊「Run workflow」按鈕執行部署
   workflow_dispatch:
 
-# 設定 GITHUB_TOKEN 權限以允許部署到 GitHub Pages
+# 設定 GITHUB_TOKEN 的存取權限，以滿足 GitHub Pages 部署規範
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+  contents: read      # 唯讀存取儲存庫程式碼內容
+  pages: write        # 具備發布與寫入 GitHub Pages 產物的最高權限
+  id-token: write     # 具備產生 OIDC 安全身分驗證權杖的權限（GitHub 部署安全規範）
 
-# 確保同時只執行一個部署任務
+# 部署併發控制（Concurrency）：避免多個 commit 同時執行導致部署衝突
 concurrency:
   group: "pages"
-  cancel-in-progress: false
+  cancel-in-progress: false   # 依序排隊執行，不中途取消進行中的部署
 
 jobs:
-  # 建置任務
+  # ----------------------------------------------------------------------------
+  # 任務一：打包建置靜態網站產物 (Build Job)
+  # ----------------------------------------------------------------------------
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest    # 使用最新穩定版 Ubuntu 虛擬機環境
     steps:
-      # 步驟 1：取得程式碼
-      - name: 取得程式碼
+      # 步驟 1：檢出專案原始碼至虛擬機工作目錄
+      # uses: actions/checkout@v4
+      - name: 檢出專案原始碼 (Checkout)
         uses: actions/checkout@v4
 
-      # 步驟 2：設定 GitHub Pages
-      - name: 設定 Pages
+      # 步驟 2：設定與初始化 GitHub Pages 執行環境
+      # uses: actions/configure-pages@v5
+      - name: 配置 GitHub Pages 部署環境
         uses: actions/configure-pages@v5
 
-      # 步驟 3：上傳建置產物
-      - name: 上傳產物
+      # 步驟 3：收集當前目錄下的靜態檔案（HTML、CSS、JS、Photo 等）並上傳為 Pages 成品
+      # uses: actions/upload-pages-artifact@v3
+      - name: 打包並上傳網頁產物 (Upload Artifact)
         uses: actions/upload-pages-artifact@v3
         with:
-          # 上傳整個專案目錄
+          # 上傳整個儲存庫根目錄下的靜態網站檔案
           path: '.'
 
-  # 部署任務
+  # ----------------------------------------------------------------------------
+  # 任務二：發布網站至 GitHub Pages (Deploy Job)
+  # ----------------------------------------------------------------------------
   deploy:
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: ${{ steps.deployment.outputs.page_url }}   # 部署完成後自動回傳網頁公開網址
     runs-on: ubuntu-latest
-    needs: build
+    needs: build              # 必須等待任務一（build）成功完成後才接續執行
     steps:
-      # 步驟 1：部署到 GitHub Pages
-      - name: 部署到 GitHub Pages
+      # 步驟 1：調用官方 deploy-pages 動作完成最終的 Pages 站點正式發布
+      # uses: actions/deploy-pages@v4
+      - name: 正式發布至 GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
