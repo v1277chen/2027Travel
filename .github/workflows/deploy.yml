@@ -59,6 +59,8 @@ jobs:
       # uses: actions/configure-pages@v5
       - name: 配置 GitHub Pages 部署環境
         uses: actions/configure-pages@v5
+        with:
+          enablement: true
 
       # 步驟 3：收集當前目錄下的靜態檔案（HTML、CSS、JS、Photo 等）並上傳為 Pages 成品
       # uses: actions/upload-pages-artifact@v3
