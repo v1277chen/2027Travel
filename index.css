@@ -671,6 +671,53 @@ a {
 }
 
 /* ============================================
+   國際轉機航班航段與中轉警示樣式
+   - 支援多航段（經香港中轉）階層化展示
+   - 凸顯轉機時間、行李直掛與過境免簽指引
+============================================ */
+.flight-segment {
+    width: 100%;
+}
+
+.flight-segment-title {
+    font-size: 0.9rem;
+    color: var(--accent-cyan);
+    margin-bottom: var(--spacing-xs);
+    font-weight: 500;
+}
+
+.transfer-alert {
+    background: rgba(30, 58, 138, 0.35);
+    border-left: 4px solid var(--accent-cyan);
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    width: 100%;
+    backdrop-filter: blur(4px);
+    transition: all var(--transition-normal);
+}
+
+.transfer-alert:hover {
+    background: rgba(30, 58, 138, 0.5);
+    border-left-color: var(--accent-green);
+}
+
+.transfer-alert-title {
+    font-weight: 600;
+    color: #bfdbfe;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.transfer-alert-desc {
+    margin: 0.35rem 0 0 0;
+    font-size: 0.875rem;
+    color: #e2e8f0;
+    line-height: 1.6;
+}
+
+/* ============================================
    高鐵卡片樣式
 ============================================ */
 .card-train {
